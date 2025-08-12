@@ -175,7 +175,7 @@
             this.Controls.Add(this.iconButton4);
             this.Controls.Add(this.btnAdd);
             this.Name = "registerMaintenance";
-            this.Text = "registerMaintenance";
+            this.Text = "Registration Maintenance";
             ((System.ComponentModel.ISupportInitialize)(this.daEvents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.daWhanau)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.daRegistration)).EndInit();
