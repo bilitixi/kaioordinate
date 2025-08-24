@@ -146,6 +146,7 @@
             this.btnExit.Text = "EXIT";
             this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // mainForm
             // 
@@ -163,6 +164,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "mainForm";
             this.Text = "Kaioordinate - Community event management software";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

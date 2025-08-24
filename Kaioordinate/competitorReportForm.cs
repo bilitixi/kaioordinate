@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Kaioordinate
 {
-    public partial class registerMaintenance : Form
+    public partial class competitorReportForm : Form
     {
-        public registerMaintenance()
+        public competitorReportForm()
         {
             InitializeComponent();
         }

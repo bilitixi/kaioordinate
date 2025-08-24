@@ -12,9 +12,27 @@ namespace Kaioordinate
 {
     public partial class mainForm : Form
     {
+        private DataModule DM;
+        private kaiEventMaintenanceForm kaiEventMaintenanceFrm;
+        private locationMaintenanceForm locationMaintenanceFrm;
+        private registerMaintenanceForm registerMaintenanceFrm;
+        private whanauMaintenanceForm whanauMaintenanceFrm;
+        private competitorReportForm competitorReportForm;
+        private kaiMaintenanceForm kaiMaintenanceForm;
+        
+       
         public mainForm()
         {
             InitializeComponent();
+        }
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            DM = new DataModule();
+        }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

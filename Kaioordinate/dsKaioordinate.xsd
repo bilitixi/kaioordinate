@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsKaioordinate" targetNamespace="http://tempuri.org/dsKaioordinate.xsd" xmlns:mstns="http://tempuri.org/dsKaioordinate.xsd" xmlns="http://tempuri.org/dsKaioordinate.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsKaioordinate" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsKaioordinate" msprop:Generator_DataSetName="dsKaioordinate">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EVENT" msprop:Generator_RowEvHandlerName="EVENTRowChangeEventHandler" msprop:Generator_RowDeletedName="EVENTRowDeleted" msprop:Generator_RowDeletingName="EVENTRowDeleting" msprop:Generator_RowEvArgName="EVENTRowChangeEvent" msprop:Generator_TablePropName="EVENT" msprop:Generator_RowChangedName="EVENTRowChanged" msprop:Generator_RowChangingName="EVENTRowChanging" msprop:Generator_TableClassName="EVENTDataTable" msprop:Generator_RowClassName="EVENTRow" msprop:Generator_TableVarName="tableEVENT" msprop:Generator_UserTableName="EVENT">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EventID" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInRow="EventID" msprop:Generator_ColumnPropNameInTable="EventIDColumn" msprop:Generator_ColumnVarNameInTable="columnEventID" msprop:Generator_UserColumnName="EventID" type="xs:int" />
+              <xs:element name="EventName" msprop:Generator_ColumnPropNameInRow="EventName" msprop:Generator_ColumnPropNameInTable="EventNameColumn" msprop:Generator_ColumnVarNameInTable="columnEventName" msprop:Generator_UserColumnName="EventName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LocationID" msprop:Generator_ColumnPropNameInRow="LocationID" msprop:Generator_ColumnPropNameInTable="LocationIDColumn" msprop:Generator_ColumnVarNameInTable="columnLocationID" msprop:Generator_UserColumnName="LocationID" type="xs:int" minOccurs="0" />
+              <xs:element name="EventDate" msprop:Generator_ColumnPropNameInRow="EventDate" msprop:Generator_ColumnPropNameInTable="EventDateColumn" msprop:Generator_ColumnVarNameInTable="columnEventDate" msprop:Generator_UserColumnName="EventDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EVENTREGISTER" msprop:Generator_RowEvHandlerName="EVENTREGISTERRowChangeEventHandler" msprop:Generator_RowDeletedName="EVENTREGISTERRowDeleted" msprop:Generator_RowDeletingName="EVENTREGISTERRowDeleting" msprop:Generator_RowEvArgName="EVENTREGISTERRowChangeEvent" msprop:Generator_TablePropName="EVENTREGISTER" msprop:Generator_RowChangedName="EVENTREGISTERRowChanged" msprop:Generator_RowChangingName="EVENTREGISTERRowChanging" msprop:Generator_TableClassName="EVENTREGISTERDataTable" msprop:Generator_RowClassName="EVENTREGISTERRow" msprop:Generator_TableVarName="tableEVENTREGISTER" msprop:Generator_UserTableName="EVENTREGISTER">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="RegistrationID" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInRow="RegistrationID" msprop:Generator_ColumnPropNameInTable="RegistrationIDColumn" msprop:Generator_ColumnVarNameInTable="columnRegistrationID" msprop:Generator_UserColumnName="RegistrationID" type="xs:int" />
+              <xs:element name="WhanauID" msprop:Generator_ColumnPropNameInRow="WhanauID" msprop:Generator_ColumnPropNameInTable="WhanauIDColumn" msprop:Generator_ColumnVarNameInTable="columnWhanauID" msprop:Generator_UserColumnName="WhanauID" type="xs:int" minOccurs="0" />
+              <xs:element name="EventID" msprop:Generator_ColumnPropNameInRow="EventID" msprop:Generator_ColumnPropNameInTable="EventIDColumn" msprop:Generator_ColumnVarNameInTable="columnEventID" msprop:Generator_UserColumnName="EventID" type="xs:int" minOccurs="0" />
+              <xs:element name="KaiPreparation" msprop:Generator_ColumnPropNameInRow="KaiPreparation" msprop:Generator_ColumnPropNameInTable="KaiPreparationColumn" msprop:Generator_ColumnVarNameInTable="columnKaiPreparation" msprop:Generator_UserColumnName="KaiPreparation" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="KAI" msprop:Generator_RowEvHandlerName="KAIRowChangeEventHandler" msprop:Generator_RowDeletedName="KAIRowDeleted" msprop:Generator_RowDeletingName="KAIRowDeleting" msprop:Generator_RowEvArgName="KAIRowChangeEvent" msprop:Generator_TablePropName="KAI" msprop:Generator_RowChangedName="KAIRowChanged" msprop:Generator_RowChangingName="KAIRowChanging" msprop:Generator_TableClassName="KAIDataTable" msprop:Generator_RowClassName="KAIRow" msprop:Generator_TableVarName="tableKAI" msprop:Generator_UserTableName="KAI">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="KaiID" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInRow="KaiID" msprop:Generator_ColumnPropNameInTable="KaiIDColumn" msprop:Generator_ColumnVarNameInTable="columnKaiID" msprop:Generator_UserColumnName="KaiID" type="xs:int" />
+              <xs:element name="EventID" msprop:Generator_ColumnPropNameInRow="EventID" msprop:Generator_ColumnPropNameInTable="EventIDColumn" msprop:Generator_ColumnVarNameInTable="columnEventID" msprop:Generator_UserColumnName="EventID" type="xs:int" minOccurs="0" />
+              <xs:element name="KaiName" msprop:Generator_ColumnPropNameInRow="KaiName" msprop:Generator_ColumnPropNameInTable="KaiNameColumn" msprop:Generator_ColumnVarNameInTable="columnKaiName" msprop:Generator_UserColumnName="KaiName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PreparationRequired" msprop:Generator_ColumnPropNameInRow="PreparationRequired" msprop:Generator_ColumnPropNameInTable="PreparationRequiredColumn" msprop:Generator_ColumnVarNameInTable="columnPreparationRequired" msprop:Generator_UserColumnName="PreparationRequired" type="xs:boolean" minOccurs="0" />
+              <xs:element name="PreparationMinutes" msprop:Generator_ColumnPropNameInRow="PreparationMinutes" msprop:Generator_ColumnPropNameInTable="PreparationMinutesColumn" msprop:Generator_ColumnVarNameInTable="columnPreparationMinutes" msprop:Generator_UserColumnName="PreparationMinutes" type="xs:int" minOccurs="0" />
+              <xs:element name="ServeQuantity" msprop:Generator_ColumnPropNameInRow="ServeQuantity" msprop:Generator_ColumnPropNameInTable="ServeQuantityColumn" msprop:Generator_ColumnVarNameInTable="columnServeQuantity" msprop:Generator_UserColumnName="ServeQuantity" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LOCATION" msprop:Generator_RowEvHandlerName="LOCATIONRowChangeEventHandler" msprop:Generator_RowDeletedName="LOCATIONRowDeleted" msprop:Generator_RowDeletingName="LOCATIONRowDeleting" msprop:Generator_RowEvArgName="LOCATIONRowChangeEvent" msprop:Generator_TablePropName="LOCATION" msprop:Generator_RowChangedName="LOCATIONRowChanged" msprop:Generator_RowChangingName="LOCATIONRowChanging" msprop:Generator_TableClassName="LOCATIONDataTable" msprop:Generator_RowClassName="LOCATIONRow" msprop:Generator_TableVarName="tableLOCATION" msprop:Generator_UserTableName="LOCATION">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LocationID" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInRow="LocationID" msprop:Generator_ColumnPropNameInTable="LocationIDColumn" msprop:Generator_ColumnVarNameInTable="columnLocationID" msprop:Generator_UserColumnName="LocationID" type="xs:int" />
+              <xs:element name="LocationName" msprop:Generator_ColumnPropNameInRow="LocationName" msprop:Generator_ColumnPropNameInTable="LocationNameColumn" msprop:Generator_ColumnVarNameInTable="columnLocationName" msprop:Generator_UserColumnName="LocationName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_UserColumnName="Address" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WHANAU" msprop:Generator_RowEvHandlerName="WHANAURowChangeEventHandler" msprop:Generator_RowDeletedName="WHANAURowDeleted" msprop:Generator_RowDeletingName="WHANAURowDeleting" msprop:Generator_RowEvArgName="WHANAURowChangeEvent" msprop:Generator_TablePropName="WHANAU" msprop:Generator_RowChangedName="WHANAURowChanged" msprop:Generator_RowChangingName="WHANAURowChanging" msprop:Generator_TableClassName="WHANAUDataTable" msprop:Generator_RowClassName="WHANAURow" msprop:Generator_TableVarName="tableWHANAU" msprop:Generator_UserTableName="WHANAU">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="WhanauID" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInRow="WhanauID" msprop:Generator_ColumnPropNameInTable="WhanauIDColumn" msprop:Generator_ColumnVarNameInTable="columnWhanauID" msprop:Generator_UserColumnName="WhanauID" type="xs:int" />
+              <xs:element name="FirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_UserColumnName="FirstName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_UserColumnName="LastName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Email" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_UserColumnName="Email" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Phone" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_ColumnVarNameInTable="columnPhone" msprop:Generator_UserColumnName="Phone" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_UserColumnName="Address" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:EVENT" />
+      <xs:field xpath="mstns:EventID" />
+    </xs:unique>
+    <xs:unique name="EVENTREGISTER_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:EVENTREGISTER" />
+      <xs:field xpath="mstns:RegistrationID" />
+    </xs:unique>
+    <xs:unique name="KAI_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:KAI" />
+      <xs:field xpath="mstns:KaiID" />
+    </xs:unique>
+    <xs:unique name="LOCATION_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LOCATION" />
+      <xs:field xpath="mstns:LocationID" />
+    </xs:unique>
+    <xs:unique name="WHANAU_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:WHANAU" />
+      <xs:field xpath="mstns:WhanauID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
