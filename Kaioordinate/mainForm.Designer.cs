@@ -62,6 +62,7 @@
             this.btnKai.Text = "KAI";
             this.btnKai.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnKai.UseVisualStyleBackColor = true;
+            this.btnKai.Click += new System.EventHandler(this.btnKai_Click);
             // 
             // btnEvents
             // 

@@ -12,9 +12,16 @@ namespace Kaioordinate
 {
     public partial class kaiMaintenanceForm : Form
     {
-        public kaiMaintenanceForm()
+        private DataModule DM;
+        private mainForm mainForm;
+        private CurrencyManager currencyManager
+        public kaiMaintenanceForm(DataModule dm, mainForm mainFrm)
         {
+
             InitializeComponent();
+            DM = dm;
+            mainForm = mainFrm;
+            
         }
     }
 }

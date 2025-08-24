@@ -17,8 +17,8 @@ namespace Kaioordinate
         private locationMaintenanceForm locationMaintenanceFrm;
         private registerMaintenanceForm registerMaintenanceFrm;
         private whanauMaintenanceForm whanauMaintenanceFrm;
-        private competitorReportForm competitorReportForm;
-        private kaiMaintenanceForm kaiMaintenanceForm;
+        private competitorReportForm competitorReportFrm;
+        private kaiMaintenanceForm kaiMaintenanceFrm;
         
        
         public mainForm()
@@ -32,7 +32,17 @@ namespace Kaioordinate
         }
         private void btnExit_Click(object sender, EventArgs e)
         {
+           
             Close();
+        }
+
+        private void btnKai_Click(object sender, EventArgs e)
+        {
+            if (kaiMaintenanceFrm == null) 
+            { 
+                kaiMaintenanceFrm = new kaiMaintenanceForm(DM, this);
+            }
+            kaiMaintenanceFrm.ShowDialog();
         }
     }
 }
