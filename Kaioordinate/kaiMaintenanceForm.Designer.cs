@@ -33,8 +33,6 @@
             this.txtEvent = new System.Windows.Forms.TextBox();
             this.txtFoodName = new System.Windows.Forms.TextBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
-            this.txtTime = new System.Windows.Forms.TextBox();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.btnUp = new FontAwesome.Sharp.IconButton();
             this.btnDown = new FontAwesome.Sharp.IconButton();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
@@ -47,6 +45,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnReturn = new FontAwesome.Sharp.IconButton();
+            this.nudTime = new System.Windows.Forms.NumericUpDown();
+            this.nudQuantity = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // lstFood
@@ -90,22 +92,6 @@
             this.txtStatus.Size = new System.Drawing.Size(84, 34);
             this.txtStatus.TabIndex = 4;
             // 
-            // txtTime
-            // 
-            this.txtTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTime.Location = new System.Drawing.Point(667, 337);
-            this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(114, 34);
-            this.txtTime.TabIndex = 5;
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(667, 404);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(114, 34);
-            this.txtQuantity.TabIndex = 6;
-            // 
             // btnUp
             // 
             this.btnUp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -119,6 +105,7 @@
             this.btnUp.Text = "UP";
             this.btnUp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // btnDown
             // 
@@ -134,6 +121,7 @@
             this.btnDown.Text = "DOWN";
             this.btnDown.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnAdd
             // 
@@ -148,6 +136,7 @@
             this.btnAdd.Text = "ADD";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnUpdate
             // 
@@ -162,6 +151,7 @@
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // iconButton4
             // 
@@ -256,6 +246,21 @@
             this.btnReturn.Text = "RETURN";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // nudTime
+            // 
+            this.nudTime.Location = new System.Drawing.Point(661, 337);
+            this.nudTime.Name = "nudTime";
+            this.nudTime.Size = new System.Drawing.Size(120, 22);
+            this.nudTime.TabIndex = 84;
+            // 
+            // nudQuantity
+            // 
+            this.nudQuantity.Location = new System.Drawing.Point(661, 397);
+            this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.Size = new System.Drawing.Size(120, 22);
+            this.nudQuantity.TabIndex = 85;
             // 
             // kaiMaintenanceForm
             // 
@@ -263,6 +268,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(73)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(1085, 590);
+            this.Controls.Add(this.nudQuantity);
+            this.Controls.Add(this.nudTime);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -275,8 +282,6 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUp);
-            this.Controls.Add(this.txtQuantity);
-            this.Controls.Add(this.txtTime);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.txtFoodName);
             this.Controls.Add(this.txtEvent);
@@ -284,6 +289,8 @@
             this.Controls.Add(this.lstFood);
             this.Name = "kaiMaintenanceForm";
             this.Text = "Kai Management";
+            ((System.ComponentModel.ISupportInitialize)(this.nudTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,8 +303,6 @@
         private System.Windows.Forms.TextBox txtEvent;
         private System.Windows.Forms.TextBox txtFoodName;
         private System.Windows.Forms.TextBox txtStatus;
-        private System.Windows.Forms.TextBox txtTime;
-        private System.Windows.Forms.TextBox txtQuantity;
         private FontAwesome.Sharp.IconButton btnUp;
         private FontAwesome.Sharp.IconButton btnDown;
         private FontAwesome.Sharp.IconButton btnAdd;
@@ -310,5 +315,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private FontAwesome.Sharp.IconButton btnReturn;
+        private System.Windows.Forms.NumericUpDown nudTime;
+        private System.Windows.Forms.NumericUpDown nudQuantity;
     }
 }

@@ -34,6 +34,8 @@ namespace Kaioordinate {
         
         private WHANAUDataTable tableWHANAU;
         
+        private global::System.Data.DataRelation relationEVENT_KAI;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -290,6 +292,7 @@ namespace Kaioordinate {
                     this.tableWHANAU.InitVars();
                 }
             }
+            this.relationEVENT_KAI = this.Relations["EVENT_KAI"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -310,6 +313,10 @@ namespace Kaioordinate {
             base.Tables.Add(this.tableLOCATION);
             this.tableWHANAU = new WHANAUDataTable();
             base.Tables.Add(this.tableWHANAU);
+            this.relationEVENT_KAI = new global::System.Data.DataRelation("EVENT_KAI", new global::System.Data.DataColumn[] {
+                        this.tableEVENT.EventIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableKAI.EventIDColumn}, false);
+            this.Relations.Add(this.relationEVENT_KAI);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1152,15 +1159,18 @@ namespace Kaioordinate {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public KAIRow AddKAIRow(int EventID, string KaiName, bool PreparationRequired, int PreparationMinutes, int ServeQuantity) {
+            public KAIRow AddKAIRow(EVENTRow parentEVENTRowByEVENT_KAI, string KaiName, bool PreparationRequired, int PreparationMinutes, int ServeQuantity) {
                 KAIRow rowKAIRow = ((KAIRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        EventID,
+                        null,
                         KaiName,
                         PreparationRequired,
                         PreparationMinutes,
                         ServeQuantity};
+                if ((parentEVENTRowByEVENT_KAI != null)) {
+                    columnValuesArray[1] = parentEVENTRowByEVENT_KAI[0];
+                }
                 rowKAIRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowKAIRow);
                 return rowKAIRow;
@@ -2076,6 +2086,17 @@ namespace Kaioordinate {
             public void SetEventDateNull() {
                 this[this.tableEVENT.EventDateColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public KAIRow[] GetKAIRows() {
+                if ((this.Table.ChildRelations["EVENT_KAI"] == null)) {
+                    return new KAIRow[0];
+                }
+                else {
+                    return ((KAIRow[])(base.GetChildRows(this.Table.ChildRelations["EVENT_KAI"])));
+                }
+            }
         }
         
         /// <summary>
@@ -2290,6 +2311,17 @@ namespace Kaioordinate {
                 }
                 set {
                     this[this.tableKAI.ServeQuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public EVENTRow EVENTRow {
+                get {
+                    return ((EVENTRow)(this.GetParentRow(this.Table.ParentRelations["EVENT_KAI"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["EVENT_KAI"]);
                 }
             }
             
