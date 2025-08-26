@@ -30,7 +30,6 @@
         {
             this.lstFood = new System.Windows.Forms.ListBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.txtEvent = new System.Windows.Forms.TextBox();
             this.txtFoodName = new System.Windows.Forms.TextBox();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.btnUp = new FontAwesome.Sharp.IconButton();
@@ -47,8 +46,25 @@
             this.btnReturn = new FontAwesome.Sharp.IconButton();
             this.nudTime = new System.Windows.Forms.NumericUpDown();
             this.nudQuantity = new System.Windows.Forms.NumericUpDown();
+            this.panel = new System.Windows.Forms.Panel();
+            this.pBtnCancel = new FontAwesome.Sharp.IconButton();
+            this.pBtnSave = new FontAwesome.Sharp.IconButton();
+            this.pCboEvent = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pCheckBox = new System.Windows.Forms.CheckBox();
+            this.pNudQuantity = new System.Windows.Forms.NumericUpDown();
+            this.pNudTime = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pTxtName = new System.Windows.Forms.TextBox();
+            this.cboEventName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
+            this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pNudQuantity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pNudTime)).BeginInit();
             this.SuspendLayout();
             // 
             // lstFood
@@ -67,14 +83,6 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(114, 34);
             this.txtID.TabIndex = 1;
-            // 
-            // txtEvent
-            // 
-            this.txtEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEvent.Location = new System.Drawing.Point(667, 128);
-            this.txtEvent.Name = "txtEvent";
-            this.txtEvent.Size = new System.Drawing.Size(260, 34);
-            this.txtEvent.TabIndex = 2;
             // 
             // txtFoodName
             // 
@@ -262,12 +270,162 @@
             this.nudQuantity.Size = new System.Drawing.Size(120, 22);
             this.nudQuantity.TabIndex = 85;
             // 
+            // panel
+            // 
+            this.panel.Controls.Add(this.pBtnCancel);
+            this.panel.Controls.Add(this.pBtnSave);
+            this.panel.Controls.Add(this.pCboEvent);
+            this.panel.Controls.Add(this.label11);
+            this.panel.Controls.Add(this.pCheckBox);
+            this.panel.Controls.Add(this.pNudQuantity);
+            this.panel.Controls.Add(this.pNudTime);
+            this.panel.Controls.Add(this.label7);
+            this.panel.Controls.Add(this.label8);
+            this.panel.Controls.Add(this.label9);
+            this.panel.Controls.Add(this.label10);
+            this.panel.Controls.Add(this.pTxtName);
+            this.panel.Location = new System.Drawing.Point(57, 15);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(974, 411);
+            this.panel.TabIndex = 86;
+            this.panel.Visible = false;
+            // 
+            // pBtnCancel
+            // 
+            this.pBtnCancel.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.pBtnCancel.IconColor = System.Drawing.Color.Black;
+            this.pBtnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.pBtnCancel.Location = new System.Drawing.Point(738, 339);
+            this.pBtnCancel.Name = "pBtnCancel";
+            this.pBtnCancel.Size = new System.Drawing.Size(144, 40);
+            this.pBtnCancel.TabIndex = 98;
+            this.pBtnCancel.Text = "Cancel";
+            this.pBtnCancel.UseVisualStyleBackColor = true;
+            this.pBtnCancel.Click += new System.EventHandler(this.pBtnCancel_Click);
+            // 
+            // pBtnSave
+            // 
+            this.pBtnSave.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.pBtnSave.IconColor = System.Drawing.Color.Black;
+            this.pBtnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.pBtnSave.Location = new System.Drawing.Point(415, 339);
+            this.pBtnSave.Name = "pBtnSave";
+            this.pBtnSave.Size = new System.Drawing.Size(144, 40);
+            this.pBtnSave.TabIndex = 97;
+            this.pBtnSave.Text = "Save";
+            this.pBtnSave.UseVisualStyleBackColor = true;
+            this.pBtnSave.Click += new System.EventHandler(this.pBtnSave_Click);
+            // 
+            // pCboEvent
+            // 
+            this.pCboEvent.FormattingEnabled = true;
+            this.pCboEvent.Location = new System.Drawing.Point(615, 18);
+            this.pCboEvent.Name = "pCboEvent";
+            this.pCboEvent.Size = new System.Drawing.Size(261, 24);
+            this.pCboEvent.TabIndex = 96;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(533, 13);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 29);
+            this.label11.TabIndex = 95;
+            this.label11.Text = "Event";
+            // 
+            // pCheckBox
+            // 
+            this.pCheckBox.AutoSize = true;
+            this.pCheckBox.Location = new System.Drawing.Point(616, 163);
+            this.pCheckBox.Name = "pCheckBox";
+            this.pCheckBox.Size = new System.Drawing.Size(18, 17);
+            this.pCheckBox.TabIndex = 94;
+            this.pCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // pNudQuantity
+            // 
+            this.pNudQuantity.Location = new System.Drawing.Point(616, 291);
+            this.pNudQuantity.Name = "pNudQuantity";
+            this.pNudQuantity.Size = new System.Drawing.Size(120, 22);
+            this.pNudQuantity.TabIndex = 93;
+            // 
+            // pNudTime
+            // 
+            this.pNudTime.Location = new System.Drawing.Point(616, 231);
+            this.pNudTime.Name = "pNudTime";
+            this.pNudTime.Size = new System.Drawing.Size(120, 22);
+            this.pNudTime.TabIndex = 92;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(418, 291);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(188, 29);
+            this.label7.TabIndex = 91;
+            this.label7.Text = "Serving Quantity";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(410, 224);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(200, 29);
+            this.label8.TabIndex = 90;
+            this.label8.Text = "Preparation Time";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(468, 154);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(138, 29);
+            this.label9.TabIndex = 89;
+            this.label9.Text = "Preparation";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(496, 87);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(119, 29);
+            this.label10.TabIndex = 88;
+            this.label10.Text = "Kai Name";
+            // 
+            // pTxtName
+            // 
+            this.pTxtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pTxtName.Location = new System.Drawing.Point(616, 81);
+            this.pTxtName.Name = "pTxtName";
+            this.pTxtName.Size = new System.Drawing.Size(260, 34);
+            this.pTxtName.TabIndex = 86;
+            // 
+            // cboEventName
+            // 
+            this.cboEventName.FormattingEnabled = true;
+            this.cboEventName.Location = new System.Drawing.Point(667, 121);
+            this.cboEventName.Name = "cboEventName";
+            this.cboEventName.Size = new System.Drawing.Size(260, 24);
+            this.cboEventName.TabIndex = 87;
+            // 
             // kaiMaintenanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(73)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(1085, 590);
+            this.Controls.Add(this.cboEventName);
+            this.Controls.Add(this.panel);
             this.Controls.Add(this.nudQuantity);
             this.Controls.Add(this.nudTime);
             this.Controls.Add(this.btnReturn);
@@ -284,13 +442,16 @@
             this.Controls.Add(this.btnUp);
             this.Controls.Add(this.txtStatus);
             this.Controls.Add(this.txtFoodName);
-            this.Controls.Add(this.txtEvent);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lstFood);
             this.Name = "kaiMaintenanceForm";
             this.Text = "Kai Management";
             ((System.ComponentModel.ISupportInitialize)(this.nudTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
+            this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pNudQuantity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pNudTime)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +461,6 @@
 
         private System.Windows.Forms.ListBox lstFood;
         private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtEvent;
         private System.Windows.Forms.TextBox txtFoodName;
         private System.Windows.Forms.TextBox txtStatus;
         private FontAwesome.Sharp.IconButton btnUp;
@@ -317,5 +477,19 @@
         private FontAwesome.Sharp.IconButton btnReturn;
         private System.Windows.Forms.NumericUpDown nudTime;
         private System.Windows.Forms.NumericUpDown nudQuantity;
+        private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.ComboBox pCboEvent;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.CheckBox pCheckBox;
+        private System.Windows.Forms.NumericUpDown pNudQuantity;
+        private System.Windows.Forms.NumericUpDown pNudTime;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox pTxtName;
+        private FontAwesome.Sharp.IconButton pBtnCancel;
+        private FontAwesome.Sharp.IconButton pBtnSave;
+        private System.Windows.Forms.ComboBox cboEventName;
     }
 }

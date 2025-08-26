@@ -108,6 +108,9 @@
     <Compile Include="DataModule.Designer.cs">
       <DependentUpon>DataModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="dsKaioordinate.cs">
+      <DependentUpon>dsKaioordinate.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsKaioordinate.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
