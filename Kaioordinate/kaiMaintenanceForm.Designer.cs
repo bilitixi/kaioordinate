@@ -284,7 +284,7 @@
             this.panel.Controls.Add(this.label9);
             this.panel.Controls.Add(this.label10);
             this.panel.Controls.Add(this.pTxtName);
-            this.panel.Location = new System.Drawing.Point(57, 15);
+            this.panel.Location = new System.Drawing.Point(60, 12);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(974, 411);
             this.panel.TabIndex = 86;
@@ -319,7 +319,7 @@
             // pCboEvent
             // 
             this.pCboEvent.FormattingEnabled = true;
-            this.pCboEvent.Location = new System.Drawing.Point(615, 18);
+            this.pCboEvent.Location = new System.Drawing.Point(615, 13);
             this.pCboEvent.Name = "pCboEvent";
             this.pCboEvent.Size = new System.Drawing.Size(261, 24);
             this.pCboEvent.TabIndex = 96;
@@ -412,11 +412,12 @@
             // 
             // cboEventName
             // 
+            this.cboEventName.Enabled = false;
             this.cboEventName.FormattingEnabled = true;
-            this.cboEventName.Location = new System.Drawing.Point(667, 121);
+            this.cboEventName.Location = new System.Drawing.Point(666, 128);
             this.cboEventName.Name = "cboEventName";
-            this.cboEventName.Size = new System.Drawing.Size(260, 24);
-            this.cboEventName.TabIndex = 87;
+            this.cboEventName.Size = new System.Drawing.Size(175, 24);
+            this.cboEventName.TabIndex = 97;
             // 
             // kaiMaintenanceForm
             // 
@@ -424,8 +425,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(73)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(1085, 590);
-            this.Controls.Add(this.cboEventName);
             this.Controls.Add(this.panel);
+            this.Controls.Add(this.cboEventName);
             this.Controls.Add(this.nudQuantity);
             this.Controls.Add(this.nudTime);
             this.Controls.Add(this.btnReturn);

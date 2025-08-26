@@ -70,13 +70,17 @@ namespace Kaioordinate
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            // change status, load panel, clear fields
             status = "Add";
             panel.Visible = true;
+            clearField();
+
         }
         
 
         private void pBtnSave_Click(object sender, EventArgs e)
         {
+            // save button if status is add
             if (status == "Add")
             {
                 DataRow newKai = DM.dtKai.NewRow();
@@ -90,26 +94,46 @@ namespace Kaioordinate
                     newKai["PreparationRequired"]=  pCheckBox.Checked;
                     newKai["PreparationMinutes"] = pNudTime.Value;
                     newKai["ServeQuantity"] = pNudQuantity.Value;
-                    newKai["EvenID"] = Convert.ToInt32(pCboEvent.SelectedValue);
+                    newKai["EventID"] = Convert.ToInt32(pCboEvent.SelectedValue);
                     DM.dtKai.Rows.Add(newKai);
-                    
+                    DM.updateKai();
+                    MessageBox.Show("Kai maintenance added successfully", "Success");
+
                 }
 
             }
+            // save button if status is update
             else
             {
-               
+
+                DataRow updateKaiRow = DM.dtKai.Rows[currencyManager.Position];
+                if (pTxtName.Text == "")
+                {
+                    MessageBox.Show("You must type in a kai name ", "Error");
+                }
+                else
+                {
+                     updateKaiRow["KaiName"] = pTxtName.Text;
+                     updateKaiRow["PreparationRequired"] = pCheckBox.Checked;
+                     updateKaiRow["PreparationMinutes"] = pNudTime.Value;
+                     updateKaiRow["ServeQuantity"] = pNudQuantity.Value;
+                     updateKaiRow["EventID"] = Convert.ToInt32(pCboEvent.SelectedValue);
+
+                    currencyManager.EndCurrentEdit();
+                    DM.updateKai();
+                    MessageBox.Show("Kai maintenance updated successfully", "Success");
+                }
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            //show panel, change status
             status = "Update";
             panel.Visible = true;
 
-            pCboEvent.Enabled = false;
-            pCheckBox.Enabled = false;
-
+  
+            //load data
             pTxtName.Text = txtFoodName.Text;
             pCboEvent.Text = cboEventName.Text;
             pNudQuantity.Value = nudQuantity.Value;
@@ -121,5 +145,13 @@ namespace Kaioordinate
         {
             panel.Visible = false;
         }
+        private void clearField() // reset field
+        {
+            pTxtName.Text = "";
+            pNudQuantity.Value = 0;
+            pNudTime.Value = 0;
+            pCheckBox.Checked = false;
+        }
+      
     }
 }

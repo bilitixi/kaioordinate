@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataModule));
             this.oleDbSelectCommand1 = new System.Data.OleDb.OleDbCommand();
+            this.oleDbConnection1 = new System.Data.OleDb.OleDbConnection();
             this.oleDbInsertCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbUpdateCommand1 = new System.Data.OleDb.OleDbCommand();
             this.oleDbDeleteCommand1 = new System.Data.OleDb.OleDbCommand();
             this.daEvent = new System.Data.OleDb.OleDbDataAdapter();
-            this.oleDbConnection1 = new System.Data.OleDb.OleDbConnection();
             this.oleDbSelectCommand2 = new System.Data.OleDb.OleDbCommand();
             this.oleDbInsertCommand2 = new System.Data.OleDb.OleDbCommand();
             this.oleDbUpdateCommand2 = new System.Data.OleDb.OleDbCommand();
@@ -64,6 +64,10 @@
             this.oleDbSelectCommand1.CommandText = "SELECT EventID, EventName, LocationID, EventDate\r\nFROM     EVENT\r\nORDER BY EventI" +
     "D";
             this.oleDbSelectCommand1.Connection = this.oleDbConnection1;
+            // 
+            // oleDbConnection1
+            // 
+            this.oleDbConnection1.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Temp\\kai-oordinate.mdb";
             // 
             // oleDbInsertCommand1
             // 
@@ -115,10 +119,6 @@
                         new System.Data.Common.DataColumnMapping("LocationID", "LocationID"),
                         new System.Data.Common.DataColumnMapping("EventDate", "EventDate")})});
             this.daEvent.UpdateCommand = this.oleDbUpdateCommand1;
-            // 
-            // oleDbConnection1
-            // 
-            this.oleDbConnection1.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\\Temp\\kai-oordinate.mdb";
             // 
             // oleDbSelectCommand2
             // 
@@ -249,6 +249,7 @@
                         new System.Data.Common.DataColumnMapping("PreparationMinutes", "PreparationMinutes"),
                         new System.Data.Common.DataColumnMapping("ServeQuantity", "ServeQuantity")})});
             this.daKai.UpdateCommand = this.oleDbUpdateCommand3;
+            this.daKai.RowUpdated += new System.Data.OleDb.OleDbRowUpdatedEventHandler(this.daKai_RowUpdated);
             // 
             // oleDbSelectCommand4
             // 

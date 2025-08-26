@@ -48,5 +48,25 @@ namespace Kaioordinate
 
 
         }
+        public void updateKai()
+        {
+            daKai.Update(dtKai);
+        }
+
+        private void daKai_RowUpdated(object sender, OleDbRowUpdatedEventArgs e)
+        {
+
+            // Include a variable and a command to retrieve 
+            // the identity value from the Access database. 
+            int newID = 0;
+            OleDbCommand idCMD = new OleDbCommand("SELECT @@IDENTITY", oleDbConnection1);
+            if (e.StatementType == StatementType.Insert)
+            {
+                // Retrieve the identity value and 
+                // store it in the TreatmentID column. 
+                newID = (int)idCMD.ExecuteScalar();
+                e.Row["KaiID"] = newID;
+            }
+        }
     }
 }
