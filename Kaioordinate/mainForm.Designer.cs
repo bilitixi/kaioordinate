@@ -77,6 +77,7 @@
             this.btnEvents.Text = "EVENTS";
             this.btnEvents.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEvents.UseVisualStyleBackColor = true;
+            this.btnEvents.Click += new System.EventHandler(this.btnEvents_Click);
             // 
             // btnWhanau
             // 

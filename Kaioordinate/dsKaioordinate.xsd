@@ -144,7 +144,8 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="EVENT_KAI" msdata:parent="EVENT" msdata:child="KAI" msdata:parentkey="EventID" msdata:childkey="EventID" msprop:Generator_UserParentTable="EVENT" msprop:Generator_UserChildTable="KAI" msprop:Generator_RelationVarName="relationEVENT_KAI" msprop:Generator_ChildPropName="GetKAIRows" msprop:Generator_ParentPropName="EVENTRow" msprop:Generator_UserRelationName="EVENT_KAI" />
+      <msdata:Relationship name="EVENT_KAI" msdata:parent="EVENT" msdata:child="KAI" msdata:parentkey="EventID" msdata:childkey="EventID" msprop:Generator_UserParentTable="EVENT" msprop:Generator_UserChildTable="KAI" msprop:Generator_RelationVarName="relationEVENT_KAI" msprop:Generator_ChildPropName="GetKAIRows" msprop:Generator_UserRelationName="EVENT_KAI" msprop:Generator_ParentPropName="EVENTRow" />
+      <msdata:Relationship name="LOCATION_EVENT" msdata:parent="LOCATION" msdata:child="EVENT" msdata:parentkey="LocationID" msdata:childkey="LocationID" msprop:Generator_UserParentTable="LOCATION" msprop:Generator_UserChildTable="EVENT" msprop:Generator_RelationVarName="relationLOCATION_EVENT" msprop:Generator_UserRelationName="LOCATION_EVENT" msprop:Generator_ChildPropName="GetEVENTRows" msprop:Generator_ParentPropName="LOCATIONRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

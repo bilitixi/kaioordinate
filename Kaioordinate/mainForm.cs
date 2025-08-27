@@ -44,5 +44,15 @@ namespace Kaioordinate
             }
             kaiMaintenanceFrm.ShowDialog();
         }
+
+        private void btnEvents_Click(object sender, EventArgs e)
+        {
+            if (kaiEventMaintenanceFrm == null)
+            {
+                kaiEventMaintenanceFrm = new kaiEventMaintenanceForm(DM, this);
+            }
+            kaiEventMaintenanceFrm.ShowDialog();
+
+        }
     }
 }

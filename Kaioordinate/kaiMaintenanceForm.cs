@@ -73,6 +73,7 @@ namespace Kaioordinate
             // change status, load panel, clear fields
             status = "Add";
             panel.Visible = true;
+            disableButton(false);
             clearField();
 
         }
@@ -131,6 +132,7 @@ namespace Kaioordinate
             //show panel, change status
             status = "Update";
             panel.Visible = true;
+            disableButton(false);
 
   
             //load data
@@ -144,6 +146,7 @@ namespace Kaioordinate
         private void pBtnCancel_Click(object sender, EventArgs e)
         {
             panel.Visible = false;
+            disableButton(true);
         }
         private void clearField() // reset field
         {
@@ -152,6 +155,29 @@ namespace Kaioordinate
             pNudTime.Value = 0;
             pCheckBox.Checked = false;
         }
-      
+        private void disableButton(bool status)
+        {
+            btnAdd.Enabled = status;
+            btnUpdate.Enabled = status;
+            btnUp.Enabled = status;
+            btnDown.Enabled = status;
+            btnReturn.Enabled = status;
+            btnDelete.Enabled = status;
+        }
+
+        private void btnDeleteKai_Click(object sender, EventArgs e)
+        {
+            DataRow deleteKaiRow = DM.dtKai.Rows[currencyManager.Position];
+            if (MessageBox.Show("Are you sure you want to delete this ?", "Warning",
+            MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                deleteKaiRow.Delete();
+                DM.updateKai();
+            }
+          
+        }
+
+
+
     }
 }
