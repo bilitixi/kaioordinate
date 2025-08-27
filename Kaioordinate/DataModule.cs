@@ -63,7 +63,7 @@ namespace Kaioordinate
             if (e.StatementType == StatementType.Insert)
             {
                 // Retrieve the identity value and 
-                // store it in the TreatmentID column. 
+                // store it in the KaiID column. 
                 newID = (int)idCMD.ExecuteScalar();
                 e.Row["KaiID"] = newID;
             }
@@ -80,7 +80,7 @@ namespace Kaioordinate
             if (e.StatementType == StatementType.Insert)
             {
                 // Retrieve the identity value and 
-                // store it in the TreatmentID column. 
+                // store it in the EventID column. 
                 newID = (int)idCMD.ExecuteScalar();
                 e.Row["EventID"] = newID;
             }
@@ -97,11 +97,28 @@ namespace Kaioordinate
             if (e.StatementType == StatementType.Insert)
             {
                 // Retrieve the identity value and 
-                // store it in the TreatmentID column. 
+                // store it in the LocationID column. 
                 newID = (int)idCMD.ExecuteScalar();
                 e.Row["LocationID"] = newID;
             }
 
+        }
+        public void updateWhanau()
+        {
+            daWhanau.Update(dtWhanau);
+        }
+
+        private void daWhanau_RowUpdated(object sender, OleDbRowUpdatedEventArgs e)
+        {
+            int newID = 0;
+            OleDbCommand idCMD = new OleDbCommand("SELECT @@IDENTITY", oleDbConnection1);
+            if (e.StatementType == StatementType.Insert)
+            {
+                // Retrieve the identity value and 
+                // store it in the WhanauID column. 
+                newID = (int)idCMD.ExecuteScalar();
+                e.Row["WhanauID"] = newID;
+            }
         }
     }
 }

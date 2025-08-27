@@ -92,6 +92,7 @@
             this.btnWhanau.Text = "WHANAU";
             this.btnWhanau.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnWhanau.UseVisualStyleBackColor = true;
+            this.btnWhanau.Click += new System.EventHandler(this.btnWhanau_Click);
             // 
             // btnLocation
             // 

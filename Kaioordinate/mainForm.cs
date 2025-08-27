@@ -63,5 +63,14 @@ namespace Kaioordinate
             }
             locationMaintenanceFrm.ShowDialog();
         }
+
+        private void btnWhanau_Click(object sender, EventArgs e)
+        {
+            if (whanauMaintenanceFrm == null)
+            {
+                whanauMaintenanceFrm = new whanauMaintenanceForm(DM, this);
+            }
+            whanauMaintenanceFrm.ShowDialog();
+        }
     }
 }

@@ -32,22 +32,35 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.btnUpdate = new FontAwesome.Sharp.IconButton();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.btnDown = new FontAwesome.Sharp.IconButton();
-            this.btnUp = new FontAwesome.Sharp.IconButton();
             this.txtLastname = new System.Windows.Forms.TextBox();
             this.txtFirstname = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lstWhanau = new System.Windows.Forms.ListBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnReturn = new FontAwesome.Sharp.IconButton();
+            this.btnUp = new FontAwesome.Sharp.IconButton();
+            this.btnDelete = new FontAwesome.Sharp.IconButton();
+            this.panel = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pTxtAddress = new System.Windows.Forms.TextBox();
+            this.pTxtPhone = new System.Windows.Forms.TextBox();
+            this.pTxtEmail = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pTxtLastname = new System.Windows.Forms.TextBox();
+            this.pTxtFirstName = new System.Windows.Forms.TextBox();
+            this.pBtnCancel = new FontAwesome.Sharp.IconButton();
+            this.pBtnSave = new FontAwesome.Sharp.IconButton();
+            this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -94,20 +107,6 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "Whanau ID";
             // 
-            // iconButton4
-            // 
-            this.iconButton4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.Location = new System.Drawing.Point(667, 434);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(132, 115);
-            this.iconButton4.TabIndex = 45;
-            this.iconButton4.Text = "DELETE";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton4.UseVisualStyleBackColor = true;
-            // 
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -121,6 +120,7 @@
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -135,6 +135,7 @@
             this.btnAdd.Text = "ADD";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDown
             // 
@@ -150,20 +151,7 @@
             this.btnDown.Text = "DOWN";
             this.btnDown.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDown.UseVisualStyleBackColor = true;
-            // 
-            // btnUp
-            // 
-            this.btnUp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUp.IconChar = FontAwesome.Sharp.IconChar.CaretSquareUp;
-            this.btnUp.IconColor = System.Drawing.Color.Black;
-            this.btnUp.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnUp.Location = new System.Drawing.Point(-130, 373);
-            this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(129, 115);
-            this.btnUp.TabIndex = 41;
-            this.btnUp.Text = "UP";
-            this.btnUp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // txtLastname
             // 
@@ -197,20 +185,6 @@
             this.lstWhanau.Name = "lstWhanau";
             this.lstWhanau.Size = new System.Drawing.Size(325, 340);
             this.lstWhanau.TabIndex = 37;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.CaretSquareUp;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(8, 434);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(129, 115);
-            this.iconButton1.TabIndex = 68;
-            this.iconButton1.Text = "UP";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton1.UseVisualStyleBackColor = true;
             // 
             // txtEmail
             // 
@@ -272,6 +246,179 @@
             this.btnReturn.Text = "RETURN";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // btnUp
+            // 
+            this.btnUp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUp.IconChar = FontAwesome.Sharp.IconChar.CaretSquareUp;
+            this.btnUp.IconColor = System.Drawing.Color.Black;
+            this.btnUp.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUp.Location = new System.Drawing.Point(8, 434);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(129, 115);
+            this.btnUp.TabIndex = 86;
+            this.btnUp.Text = "UP";
+            this.btnUp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnDelete.IconColor = System.Drawing.Color.Black;
+            this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDelete.Location = new System.Drawing.Point(660, 434);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(132, 115);
+            this.btnDelete.TabIndex = 87;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // panel
+            // 
+            this.panel.Controls.Add(this.pBtnCancel);
+            this.panel.Controls.Add(this.pBtnSave);
+            this.panel.Controls.Add(this.label7);
+            this.panel.Controls.Add(this.label8);
+            this.panel.Controls.Add(this.pTxtAddress);
+            this.panel.Controls.Add(this.pTxtPhone);
+            this.panel.Controls.Add(this.pTxtEmail);
+            this.panel.Controls.Add(this.label9);
+            this.panel.Controls.Add(this.label10);
+            this.panel.Controls.Add(this.label11);
+            this.panel.Controls.Add(this.pTxtLastname);
+            this.panel.Controls.Add(this.pTxtFirstName);
+            this.panel.Location = new System.Drawing.Point(45, 24);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(986, 404);
+            this.panel.TabIndex = 88;
+            this.panel.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(573, 292);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(102, 29);
+            this.label7.TabIndex = 85;
+            this.label7.Text = "Address";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(592, 235);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 29);
+            this.label8.TabIndex = 84;
+            this.label8.Text = "Phone";
+            // 
+            // pTxtAddress
+            // 
+            this.pTxtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pTxtAddress.Location = new System.Drawing.Point(692, 278);
+            this.pTxtAddress.Multiline = true;
+            this.pTxtAddress.Name = "pTxtAddress";
+            this.pTxtAddress.Size = new System.Drawing.Size(260, 49);
+            this.pTxtAddress.TabIndex = 83;
+            // 
+            // pTxtPhone
+            // 
+            this.pTxtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pTxtPhone.Location = new System.Drawing.Point(692, 228);
+            this.pTxtPhone.Name = "pTxtPhone";
+            this.pTxtPhone.Size = new System.Drawing.Size(180, 34);
+            this.pTxtPhone.TabIndex = 82;
+            // 
+            // pTxtEmail
+            // 
+            this.pTxtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pTxtEmail.Location = new System.Drawing.Point(692, 169);
+            this.pTxtEmail.Name = "pTxtEmail";
+            this.pTxtEmail.Size = new System.Drawing.Size(260, 34);
+            this.pTxtEmail.TabIndex = 81;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(601, 176);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 29);
+            this.label9.TabIndex = 80;
+            this.label9.Text = "Email";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(556, 128);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(128, 29);
+            this.label10.TabIndex = 79;
+            this.label10.Text = "Last Name";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(556, 80);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(131, 29);
+            this.label11.TabIndex = 78;
+            this.label11.Text = "First Name";
+            // 
+            // pTxtLastname
+            // 
+            this.pTxtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pTxtLastname.Location = new System.Drawing.Point(691, 121);
+            this.pTxtLastname.Name = "pTxtLastname";
+            this.pTxtLastname.Size = new System.Drawing.Size(260, 34);
+            this.pTxtLastname.TabIndex = 76;
+            // 
+            // pTxtFirstName
+            // 
+            this.pTxtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pTxtFirstName.Location = new System.Drawing.Point(691, 80);
+            this.pTxtFirstName.Name = "pTxtFirstName";
+            this.pTxtFirstName.Size = new System.Drawing.Size(260, 34);
+            this.pTxtFirstName.TabIndex = 75;
+            // 
+            // pBtnCancel
+            // 
+            this.pBtnCancel.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.pBtnCancel.IconColor = System.Drawing.Color.Black;
+            this.pBtnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.pBtnCancel.Location = new System.Drawing.Point(769, 349);
+            this.pBtnCancel.Name = "pBtnCancel";
+            this.pBtnCancel.Size = new System.Drawing.Size(144, 40);
+            this.pBtnCancel.TabIndex = 102;
+            this.pBtnCancel.Text = "Cancel";
+            this.pBtnCancel.UseVisualStyleBackColor = true;
+            this.pBtnCancel.Click += new System.EventHandler(this.pBtnCancel_Click);
+            // 
+            // pBtnSave
+            // 
+            this.pBtnSave.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.pBtnSave.IconColor = System.Drawing.Color.Black;
+            this.pBtnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.pBtnSave.Location = new System.Drawing.Point(543, 349);
+            this.pBtnSave.Name = "pBtnSave";
+            this.pBtnSave.Size = new System.Drawing.Size(144, 40);
+            this.pBtnSave.TabIndex = 101;
+            this.pBtnSave.Text = "Save";
+            this.pBtnSave.UseVisualStyleBackColor = true;
+            this.pBtnSave.Click += new System.EventHandler(this.pBtnSave_Click);
             // 
             // whanauMaintenanceForm
             // 
@@ -279,28 +426,30 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(73)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(1085, 590);
+            this.Controls.Add(this.panel);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnUp);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.iconButton4);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDown);
-            this.Controls.Add(this.btnUp);
             this.Controls.Add(this.txtLastname);
             this.Controls.Add(this.txtFirstname);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lstWhanau);
             this.Name = "whanauMaintenanceForm";
             this.Text = "Whanau Management";
+            this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,21 +460,36 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton iconButton4;
+       
         private FontAwesome.Sharp.IconButton btnUpdate;
         private FontAwesome.Sharp.IconButton btnAdd;
         private FontAwesome.Sharp.IconButton btnDown;
-        private FontAwesome.Sharp.IconButton btnUp;
+      
         private System.Windows.Forms.TextBox txtLastname;
         private System.Windows.Forms.TextBox txtFirstname;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.ListBox lstWhanau;
-        private FontAwesome.Sharp.IconButton iconButton1;
+       
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private FontAwesome.Sharp.IconButton btnReturn;
+        private FontAwesome.Sharp.IconButton btnUp;
+        private FontAwesome.Sharp.IconButton btnDelete;
+        private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox pTxtAddress;
+        private System.Windows.Forms.TextBox pTxtPhone;
+        private System.Windows.Forms.TextBox pTxtEmail;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox pTxtLastname;
+        private System.Windows.Forms.TextBox pTxtFirstName;
+        private FontAwesome.Sharp.IconButton pBtnCancel;
+        private FontAwesome.Sharp.IconButton pBtnSave;
     }
 }
