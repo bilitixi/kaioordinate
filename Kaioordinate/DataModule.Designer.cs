@@ -302,6 +302,7 @@
                         new System.Data.Common.DataColumnMapping("LocationName", "LocationName"),
                         new System.Data.Common.DataColumnMapping("Address", "Address")})});
             this.daLocation.UpdateCommand = this.oleDbUpdateCommand4;
+            this.daLocation.RowUpdated += new System.Data.OleDb.OleDbRowUpdatedEventHandler(this.daLocation_RowUpdated);
             // 
             // oleDbSelectCommand5
             // 

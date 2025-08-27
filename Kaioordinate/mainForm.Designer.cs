@@ -106,6 +106,7 @@
             this.btnLocation.Text = "LOCATION";
             this.btnLocation.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLocation.UseVisualStyleBackColor = true;
+            this.btnLocation.Click += new System.EventHandler(this.btnLocation_Click);
             // 
             // btnRegistration
             // 

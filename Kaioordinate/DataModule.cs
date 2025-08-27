@@ -85,5 +85,23 @@ namespace Kaioordinate
                 e.Row["EventID"] = newID;
             }
         }
+        public void updateLocation()
+        {
+            daLocation.Update(dtLocation);
+        }
+
+        private void daLocation_RowUpdated(object sender, OleDbRowUpdatedEventArgs e)
+        {
+            int newID = 0;
+            OleDbCommand idCMD = new OleDbCommand("SELECT @@IDENTITY", oleDbConnection1);
+            if (e.StatementType == StatementType.Insert)
+            {
+                // Retrieve the identity value and 
+                // store it in the TreatmentID column. 
+                newID = (int)idCMD.ExecuteScalar();
+                e.Row["LocationID"] = newID;
+            }
+
+        }
     }
 }
