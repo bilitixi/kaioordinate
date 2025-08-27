@@ -356,7 +356,7 @@
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lstEvent);
             this.Name = "kaiEventMaintenanceForm";
-            this.Text = "kaiEventMaintenanceForm";
+            this.Text = "Event Maintenance";
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
             this.ResumeLayout(false);
