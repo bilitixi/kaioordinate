@@ -28,60 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.daRegistration = new System.Windows.Forms.DataGridView();
-            this.daWhanau = new System.Windows.Forms.DataGridView();
-            this.daEvents = new System.Windows.Forms.DataGridView();
+            this.components = new System.ComponentModel.Container();
+            this.checkBox = new System.Windows.Forms.CheckBox();
+            this.dgvRegistration = new System.Windows.Forms.DataGridView();
+            this.dgvWhanau = new System.Windows.Forms.DataGridView();
+            this.dgvEvents = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnReturn = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.daRegistration)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.daWhanau)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.daEvents)).BeginInit();
+            this.dsKaioordinate = new Kaioordinate.dsKaioordinate();
+            this.eVENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wHANAUBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eVENTREGISTERBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWhanau)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsKaioordinate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eVENTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wHANAUBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eVENTREGISTERBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // checkBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.checkBox1.Location = new System.Drawing.Point(553, 343);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(302, 33);
-            this.checkBox1.TabIndex = 101;
-            this.checkBox1.Text = "Kai Preparation Assistant";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox.AutoSize = true;
+            this.checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.checkBox.Location = new System.Drawing.Point(553, 343);
+            this.checkBox.Name = "checkBox";
+            this.checkBox.Size = new System.Drawing.Size(302, 33);
+            this.checkBox.TabIndex = 101;
+            this.checkBox.Text = "Kai Preparation Assistant";
+            this.checkBox.UseVisualStyleBackColor = true;
             // 
-            // daRegistration
+            // dgvRegistration
             // 
-            this.daRegistration.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.daRegistration.Location = new System.Drawing.Point(66, 334);
-            this.daRegistration.Name = "daRegistration";
-            this.daRegistration.RowHeadersWidth = 51;
-            this.daRegistration.Size = new System.Drawing.Size(389, 178);
-            this.daRegistration.TabIndex = 100;
+            this.dgvRegistration.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRegistration.Location = new System.Drawing.Point(66, 334);
+            this.dgvRegistration.Name = "dgvRegistration";
+            this.dgvRegistration.RowHeadersWidth = 51;
+            this.dgvRegistration.Size = new System.Drawing.Size(389, 178);
+            this.dgvRegistration.TabIndex = 100;
             // 
-            // daWhanau
+            // dgvWhanau
             // 
-            this.daWhanau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.daWhanau.Location = new System.Drawing.Point(604, 92);
-            this.daWhanau.Name = "daWhanau";
-            this.daWhanau.RowHeadersWidth = 51;
-            this.daWhanau.Size = new System.Drawing.Size(389, 178);
-            this.daWhanau.TabIndex = 99;
+            this.dgvWhanau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWhanau.Location = new System.Drawing.Point(604, 92);
+            this.dgvWhanau.Name = "dgvWhanau";
+            this.dgvWhanau.RowHeadersWidth = 51;
+            this.dgvWhanau.Size = new System.Drawing.Size(389, 178);
+            this.dgvWhanau.TabIndex = 99;
             // 
-            // daEvents
+            // dgvEvents
             // 
-            this.daEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.daEvents.Location = new System.Drawing.Point(66, 92);
-            this.daEvents.Name = "daEvents";
-            this.daEvents.RowHeadersWidth = 51;
-            this.daEvents.RowTemplate.Height = 24;
-            this.daEvents.Size = new System.Drawing.Size(389, 178);
-            this.daEvents.TabIndex = 98;
+            this.dgvEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEvents.Location = new System.Drawing.Point(66, 92);
+            this.dgvEvents.Name = "dgvEvents";
+            this.dgvEvents.ReadOnly = true;
+            this.dgvEvents.RowHeadersWidth = 51;
+            this.dgvEvents.RowTemplate.Height = 24;
+            this.dgvEvents.Size = new System.Drawing.Size(389, 178);
+            this.dgvEvents.TabIndex = 98;
             // 
             // label3
             // 
@@ -129,6 +139,7 @@
             this.btnReturn.Text = "RETURN";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // iconButton4
             // 
@@ -157,6 +168,27 @@
             this.btnAdd.Text = "ADD";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // dsKaioordinate
+            // 
+            this.dsKaioordinate.DataSetName = "dsKaioordinate";
+            this.dsKaioordinate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // eVENTBindingSource
+            // 
+            this.eVENTBindingSource.DataMember = "EVENT";
+            this.eVENTBindingSource.DataSource = this.dsKaioordinate;
+            // 
+            // wHANAUBindingSource
+            // 
+            this.wHANAUBindingSource.DataMember = "WHANAU";
+            this.wHANAUBindingSource.DataSource = this.dsKaioordinate;
+            // 
+            // eVENTREGISTERBindingSource
+            // 
+            this.eVENTREGISTERBindingSource.DataMember = "EVENTREGISTER";
+            this.eVENTREGISTERBindingSource.DataSource = this.dsKaioordinate;
             // 
             // registerMaintenanceForm
             // 
@@ -164,10 +196,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(73)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(1085, 590);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.daRegistration);
-            this.Controls.Add(this.daWhanau);
-            this.Controls.Add(this.daEvents);
+            this.Controls.Add(this.checkBox);
+            this.Controls.Add(this.dgvRegistration);
+            this.Controls.Add(this.dgvWhanau);
+            this.Controls.Add(this.dgvEvents);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -176,9 +208,14 @@
             this.Controls.Add(this.btnAdd);
             this.Name = "registerMaintenanceForm";
             this.Text = "Registration Maintenance";
-            ((System.ComponentModel.ISupportInitialize)(this.daRegistration)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.daWhanau)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.daEvents)).EndInit();
+            this.Load += new System.EventHandler(this.registerMaintenanceForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRegistration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWhanau)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsKaioordinate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eVENTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wHANAUBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eVENTREGISTERBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,15 +223,19 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DataGridView daRegistration;
-        private System.Windows.Forms.DataGridView daWhanau;
-        private System.Windows.Forms.DataGridView daEvents;
+        private System.Windows.Forms.CheckBox checkBox;
+        private System.Windows.Forms.DataGridView dgvRegistration;
+        private System.Windows.Forms.DataGridView dgvWhanau;
+        private System.Windows.Forms.DataGridView dgvEvents;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnReturn;
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton btnAdd;
+        private System.Windows.Forms.BindingSource eVENTBindingSource;
+        private dsKaioordinate dsKaioordinate;
+        private System.Windows.Forms.BindingSource eVENTREGISTERBindingSource;
+        private System.Windows.Forms.BindingSource wHANAUBindingSource;
     }
 }

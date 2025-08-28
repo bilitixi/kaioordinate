@@ -52,7 +52,7 @@ namespace Kaioordinate
 
             locationView.Sort = "LocationID";
             eventView.Sort = "EventID";
-            eventRegisterView.Sort = "RegistrationID";
+            eventRegisterView.Sort = "WhanauID";
             whanauView.Sort = "WhanauID";
             kaiView.Sort = "KaiID";
 
@@ -126,10 +126,24 @@ namespace Kaioordinate
             OleDbCommand idCMD = new OleDbCommand("SELECT @@IDENTITY", oleDbConnection1);
             if (e.StatementType == StatementType.Insert)
             {
-                // Retrieve the identity value and 
-                // store it in the WhanauID column. 
+                 
                 newID = (int)idCMD.ExecuteScalar();
                 e.Row["WhanauID"] = newID;
+            }
+        }
+        public void updateEventRegister()
+        {
+            daEventRegister.Update(dtEventRegister);
+        }
+
+        private void daEventRegister_RowUpdated(object sender, OleDbRowUpdatedEventArgs e)
+        {
+            int newID = 0;
+            OleDbCommand idCMD = new OleDbCommand("SELECT @@IDENTITY", oleDbConnection1);
+            if (e.StatementType == StatementType.Insert)
+            {
+                newID = (int)idCMD.ExecuteScalar();
+                e.Row["RegistrationID"] = newID;
             }
         }
     }

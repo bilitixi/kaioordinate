@@ -178,6 +178,7 @@
                         new System.Data.Common.DataColumnMapping("EventID", "EventID"),
                         new System.Data.Common.DataColumnMapping("KaiPreparation", "KaiPreparation")})});
             this.daEventRegister.UpdateCommand = this.oleDbUpdateCommand2;
+            this.daEventRegister.RowUpdated += new System.Data.OleDb.OleDbRowUpdatedEventHandler(this.daEventRegister_RowUpdated);
             // 
             // oleDbSelectCommand3
             // 

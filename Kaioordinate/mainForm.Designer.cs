@@ -122,6 +122,7 @@
             this.btnRegistration.Text = "REGISTRATION";
             this.btnRegistration.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnRegistration.UseVisualStyleBackColor = true;
+            this.btnRegistration.Click += new System.EventHandler(this.btnRegistration_Click);
             // 
             // btnPrint
             // 

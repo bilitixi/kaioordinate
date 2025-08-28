@@ -81,5 +81,14 @@ namespace Kaioordinate
             }
             competitorReportFrm.ShowDialog();
         }
+
+        private void btnRegistration_Click(object sender, EventArgs e)
+        {
+            if (registerMaintenanceFrm == null)
+            {
+                registerMaintenanceFrm = new registerMaintenanceForm(DM, this);
+            }
+            registerMaintenanceFrm.ShowDialog();
+        }
     }
 }
