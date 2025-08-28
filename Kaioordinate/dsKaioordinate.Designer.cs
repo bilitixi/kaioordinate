@@ -38,6 +38,8 @@ namespace Kaioordinate {
         
         private global::System.Data.DataRelation relationLOCATION_EVENT;
         
+        private global::System.Data.DataRelation relationEVENT_EVENTREGISTER;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -296,6 +298,7 @@ namespace Kaioordinate {
             }
             this.relationEVENT_KAI = this.Relations["EVENT_KAI"];
             this.relationLOCATION_EVENT = this.Relations["LOCATION_EVENT"];
+            this.relationEVENT_EVENTREGISTER = this.Relations["EVENT_EVENTREGISTER"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -324,6 +327,10 @@ namespace Kaioordinate {
                         this.tableLOCATION.LocationIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableEVENT.LocationIDColumn}, false);
             this.Relations.Add(this.relationLOCATION_EVENT);
+            this.relationEVENT_EVENTREGISTER = new global::System.Data.DataRelation("EVENT_EVENTREGISTER", new global::System.Data.DataColumn[] {
+                        this.tableEVENT.EventIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEVENTREGISTER.EventIDColumn}, false);
+            this.Relations.Add(this.relationEVENT_EVENTREGISTER);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -848,13 +855,16 @@ namespace Kaioordinate {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public EVENTREGISTERRow AddEVENTREGISTERRow(int WhanauID, int EventID, bool KaiPreparation) {
+            public EVENTREGISTERRow AddEVENTREGISTERRow(int WhanauID, EVENTRow parentEVENTRowByEVENT_EVENTREGISTER, bool KaiPreparation) {
                 EVENTREGISTERRow rowEVENTREGISTERRow = ((EVENTREGISTERRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         WhanauID,
-                        EventID,
+                        null,
                         KaiPreparation};
+                if ((parentEVENTRowByEVENT_EVENTREGISTER != null)) {
+                    columnValuesArray[2] = parentEVENTRowByEVENT_EVENTREGISTER[0];
+                }
                 rowEVENTREGISTERRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEVENTREGISTERRow);
                 return rowEVENTREGISTERRow;
@@ -2118,6 +2128,17 @@ namespace Kaioordinate {
                     return ((KAIRow[])(base.GetChildRows(this.Table.ChildRelations["EVENT_KAI"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public EVENTREGISTERRow[] GetEVENTREGISTERRows() {
+                if ((this.Table.ChildRelations["EVENT_EVENTREGISTER"] == null)) {
+                    return new EVENTREGISTERRow[0];
+                }
+                else {
+                    return ((EVENTREGISTERRow[])(base.GetChildRows(this.Table.ChildRelations["EVENT_EVENTREGISTER"])));
+                }
+            }
         }
         
         /// <summary>
@@ -2190,6 +2211,17 @@ namespace Kaioordinate {
                 }
                 set {
                     this[this.tableEVENTREGISTER.KaiPreparationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public EVENTRow EVENTRow {
+                get {
+                    return ((EVENTRow)(this.GetParentRow(this.Table.ParentRelations["EVENT_EVENTREGISTER"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["EVENT_EVENTREGISTER"]);
                 }
             }
             

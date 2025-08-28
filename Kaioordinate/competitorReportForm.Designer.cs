@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(competitorReportForm));
             this.btnReport = new FontAwesome.Sharp.IconButton();
             this.btnReturn = new FontAwesome.Sharp.IconButton();
+            this.printInvoices = new System.Drawing.Printing.PrintDocument();
+            this.prvInvoices = new System.Windows.Forms.PrintPreviewDialog();
             this.SuspendLayout();
             // 
             // btnReport
@@ -42,9 +45,10 @@
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(132, 115);
             this.btnReport.TabIndex = 87;
-            this.btnReport.Text = "RETURN";
+            this.btnReport.Text = "PRINT";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnReturn
             // 
@@ -59,6 +63,22 @@
             this.btnReturn.Text = "RETURN";
             this.btnReturn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // printInvoices
+            // 
+            this.printInvoices.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printInvoices_PrintPage);
+            // 
+            // prvInvoices
+            // 
+            this.prvInvoices.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.prvInvoices.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.prvInvoices.ClientSize = new System.Drawing.Size(400, 300);
+            this.prvInvoices.Document = this.printInvoices;
+            this.prvInvoices.Enabled = true;
+            this.prvInvoices.Icon = ((System.Drawing.Icon)(resources.GetObject("prvInvoices.Icon")));
+            this.prvInvoices.Name = "prvInvoices";
+            this.prvInvoices.Visible = false;
             // 
             // competitorReportForm
             // 
@@ -70,6 +90,7 @@
             this.Controls.Add(this.btnReturn);
             this.Name = "competitorReportForm";
             this.Text = "competitorReportForm";
+            this.Load += new System.EventHandler(this.competitorReportForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -78,5 +99,7 @@
 
         private FontAwesome.Sharp.IconButton btnReport;
         private FontAwesome.Sharp.IconButton btnReturn;
+        private System.Drawing.Printing.PrintDocument printInvoices;
+        private System.Windows.Forms.PrintPreviewDialog prvInvoices;
     }
 }

@@ -44,6 +44,18 @@ namespace Kaioordinate
             dtLocation = dsKaioordinate.Tables["LOCATION"];
             dtWhanau = dsKaioordinate.Tables["WHANAU"];
 
+            locationView = new DataView(dtLocation);
+            eventView = new DataView(dtEvent);
+            eventRegisterView = new DataView(dtEventRegister);
+            whanauView = new DataView(dtWhanau);
+            kaiView = new DataView(dtKai);
+
+            locationView.Sort = "LocationID";
+            eventView.Sort = "EventID";
+            eventRegisterView.Sort = "RegistrationID";
+            whanauView.Sort = "WhanauID";
+            kaiView.Sort = "KaiID";
+
             dsKaioordinate.EnforceConstraints = true;
 
 

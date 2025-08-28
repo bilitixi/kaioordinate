@@ -72,5 +72,14 @@ namespace Kaioordinate
             }
             whanauMaintenanceFrm.ShowDialog();
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (competitorReportFrm == null)
+            {
+                competitorReportFrm = new competitorReportForm(DM, this);
+            }
+            competitorReportFrm.ShowDialog();
+        }
     }
 }
