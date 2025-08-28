@@ -85,5 +85,21 @@ namespace Kaioordinate
         {
 
         }
+
+        
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DataRow deleteEventRegister = DM.dtEventRegister.Rows[cmRegistration.Position];
+            if (MessageBox.Show("Are you sure you want to delete this registration?", "Warning",
+                    MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                deleteEventRegister.Delete();
+                DM.updateEventRegister();
+                MessageBox.Show("Registration deleted successfully", "Acknowledgement", MessageBoxButtons.OK);
+            }
+        }
+
     }
 }
+

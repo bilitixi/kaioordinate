@@ -37,7 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnReturn = new FontAwesome.Sharp.IconButton();
-            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.btnDelete = new FontAwesome.Sharp.IconButton();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
             this.dsKaioordinate = new Kaioordinate.dsKaioordinate();
             this.eVENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -141,19 +141,20 @@
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
-            // iconButton4
+            // btnDelete
             // 
-            this.iconButton4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.iconButton4.IconColor = System.Drawing.Color.Black;
-            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton4.Location = new System.Drawing.Point(619, 427);
-            this.iconButton4.Name = "iconButton4";
-            this.iconButton4.Size = new System.Drawing.Size(132, 115);
-            this.iconButton4.TabIndex = 93;
-            this.iconButton4.Text = "DELETE";
-            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.iconButton4.UseVisualStyleBackColor = true;
+            this.btnDelete.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnDelete.IconColor = System.Drawing.Color.Black;
+            this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDelete.Location = new System.Drawing.Point(619, 427);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(132, 115);
+            this.btnDelete.TabIndex = 93;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -204,7 +205,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnReturn);
-            this.Controls.Add(this.iconButton4);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Name = "registerMaintenanceForm";
             this.Text = "Registration Maintenance";
@@ -231,7 +232,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnReturn;
-        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton btnDelete;
         private FontAwesome.Sharp.IconButton btnAdd;
         private System.Windows.Forms.BindingSource eVENTBindingSource;
         private dsKaioordinate dsKaioordinate;
