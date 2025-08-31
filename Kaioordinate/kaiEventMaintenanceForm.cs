@@ -98,7 +98,7 @@ namespace Kaioordinate
                 DataRow updateEventRow = DM.dtEvent.Rows[currencyManager.Position];
                 if (pTxtEventName.Text == "")
                 {
-                    MessageBox.Show("You must type in a kai name ", "Error");
+                    MessageBox.Show("Please enter the Event Name ", "Error");
                 }
                 else
                 {

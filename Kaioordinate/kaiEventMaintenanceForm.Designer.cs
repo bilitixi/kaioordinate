@@ -58,9 +58,10 @@
             // dtpDate
             // 
             this.dtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.Location = new System.Drawing.Point(595, 247);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(414, 34);
+            this.dtpDate.Size = new System.Drawing.Size(259, 34);
             this.dtpDate.TabIndex = 66;
             // 
             // label4
@@ -199,7 +200,7 @@
             this.panel.Controls.Add(this.label7);
             this.panel.Controls.Add(this.label6);
             this.panel.Controls.Add(this.pTxtEventName);
-            this.panel.Location = new System.Drawing.Point(12, 12);
+            this.panel.Location = new System.Drawing.Point(26, 27);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1007, 398);
             this.panel.TabIndex = 84;
@@ -242,6 +243,7 @@
             // pDtpTime
             // 
             this.pDtpTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pDtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.pDtpTime.Location = new System.Drawing.Point(532, 256);
             this.pDtpTime.Name = "pDtpTime";
             this.pDtpTime.Size = new System.Drawing.Size(260, 34);

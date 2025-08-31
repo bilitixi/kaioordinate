@@ -41,11 +41,12 @@
             this.btnReport.IconChar = FontAwesome.Sharp.IconChar.Print;
             this.btnReport.IconColor = System.Drawing.Color.Black;
             this.btnReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnReport.Location = new System.Drawing.Point(87, 64);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(132, 115);
             this.btnReport.TabIndex = 87;
-            this.btnReport.Text = "PRINT";
+            this.btnReport.Text = "GENERATE REPORT";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
@@ -89,7 +90,7 @@
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnReturn);
             this.Name = "competitorReportForm";
-            this.Text = "competitorReportForm";
+            this.Text = "Report Preview";
             this.Load += new System.EventHandler(this.competitorReportForm_Load);
             this.ResumeLayout(false);
 

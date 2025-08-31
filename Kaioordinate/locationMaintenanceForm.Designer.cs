@@ -42,14 +42,14 @@
             this.btnUp = new FontAwesome.Sharp.IconButton();
             this.btnDelete = new FontAwesome.Sharp.IconButton();
             this.panel = new System.Windows.Forms.Panel();
+            this.pBtnCancel = new FontAwesome.Sharp.IconButton();
+            this.pBtnSave = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblLocationID = new System.Windows.Forms.Label();
             this.pTxtAddress = new System.Windows.Forms.TextBox();
             this.pTxtLocationName = new System.Windows.Forms.TextBox();
             this.pTxtLocationID = new System.Windows.Forms.TextBox();
-            this.pBtnCancel = new FontAwesome.Sharp.IconButton();
-            this.pBtnSave = new FontAwesome.Sharp.IconButton();
             this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -227,6 +227,32 @@
             this.panel.TabIndex = 88;
             this.panel.Visible = false;
             // 
+            // pBtnCancel
+            // 
+            this.pBtnCancel.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.pBtnCancel.IconColor = System.Drawing.Color.Black;
+            this.pBtnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.pBtnCancel.Location = new System.Drawing.Point(747, 287);
+            this.pBtnCancel.Name = "pBtnCancel";
+            this.pBtnCancel.Size = new System.Drawing.Size(144, 40);
+            this.pBtnCancel.TabIndex = 102;
+            this.pBtnCancel.Text = "Cancel";
+            this.pBtnCancel.UseVisualStyleBackColor = true;
+            this.pBtnCancel.Click += new System.EventHandler(this.pBtnCancel_Click);
+            // 
+            // pBtnSave
+            // 
+            this.pBtnSave.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.pBtnSave.IconColor = System.Drawing.Color.Black;
+            this.pBtnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.pBtnSave.Location = new System.Drawing.Point(521, 287);
+            this.pBtnSave.Name = "pBtnSave";
+            this.pBtnSave.Size = new System.Drawing.Size(144, 40);
+            this.pBtnSave.TabIndex = 101;
+            this.pBtnSave.Text = "Save";
+            this.pBtnSave.UseVisualStyleBackColor = true;
+            this.pBtnSave.Click += new System.EventHandler(this.pBtnSave_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -285,32 +311,6 @@
             this.pTxtLocationID.ReadOnly = true;
             this.pTxtLocationID.Size = new System.Drawing.Size(95, 34);
             this.pTxtLocationID.TabIndex = 82;
-            // 
-            // pBtnCancel
-            // 
-            this.pBtnCancel.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.pBtnCancel.IconColor = System.Drawing.Color.Black;
-            this.pBtnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.pBtnCancel.Location = new System.Drawing.Point(747, 287);
-            this.pBtnCancel.Name = "pBtnCancel";
-            this.pBtnCancel.Size = new System.Drawing.Size(144, 40);
-            this.pBtnCancel.TabIndex = 102;
-            this.pBtnCancel.Text = "Cancel";
-            this.pBtnCancel.UseVisualStyleBackColor = true;
-            this.pBtnCancel.Click += new System.EventHandler(this.pBtnCancel_Click);
-            // 
-            // pBtnSave
-            // 
-            this.pBtnSave.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.pBtnSave.IconColor = System.Drawing.Color.Black;
-            this.pBtnSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.pBtnSave.Location = new System.Drawing.Point(521, 287);
-            this.pBtnSave.Name = "pBtnSave";
-            this.pBtnSave.Size = new System.Drawing.Size(144, 40);
-            this.pBtnSave.TabIndex = 101;
-            this.pBtnSave.Text = "Save";
-            this.pBtnSave.UseVisualStyleBackColor = true;
-            this.pBtnSave.Click += new System.EventHandler(this.pBtnSave_Click);
             // 
             // locationMaintenanceForm
             // 

@@ -66,24 +66,29 @@
             // 
             // dgvRegistration
             // 
+            this.dgvRegistration.AllowUserToAddRows = false;
             this.dgvRegistration.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRegistration.Location = new System.Drawing.Point(66, 334);
             this.dgvRegistration.Name = "dgvRegistration";
+            this.dgvRegistration.ReadOnly = true;
             this.dgvRegistration.RowHeadersWidth = 51;
             this.dgvRegistration.Size = new System.Drawing.Size(389, 178);
             this.dgvRegistration.TabIndex = 100;
             // 
             // dgvWhanau
             // 
+            this.dgvWhanau.AllowUserToAddRows = false;
             this.dgvWhanau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvWhanau.Location = new System.Drawing.Point(604, 92);
             this.dgvWhanau.Name = "dgvWhanau";
+            this.dgvWhanau.ReadOnly = true;
             this.dgvWhanau.RowHeadersWidth = 51;
             this.dgvWhanau.Size = new System.Drawing.Size(389, 178);
             this.dgvWhanau.TabIndex = 99;
             // 
             // dgvEvents
             // 
+            this.dgvEvents.AllowUserToAddRows = false;
             this.dgvEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEvents.Location = new System.Drawing.Point(66, 92);
             this.dgvEvents.Name = "dgvEvents";
