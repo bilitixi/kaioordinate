@@ -33,6 +33,7 @@
             this.btnReturn = new FontAwesome.Sharp.IconButton();
             this.printInvoices = new System.Drawing.Printing.PrintDocument();
             this.prvInvoices = new System.Windows.Forms.PrintPreviewDialog();
+            this.btnPreviewWhanau = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // btnReport
@@ -42,7 +43,7 @@
             this.btnReport.IconColor = System.Drawing.Color.Black;
             this.btnReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnReport.Location = new System.Drawing.Point(87, 64);
+            this.btnReport.Location = new System.Drawing.Point(161, 55);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(132, 115);
             this.btnReport.TabIndex = 87;
@@ -57,7 +58,7 @@
             this.btnReturn.IconChar = FontAwesome.Sharp.IconChar.SignOut;
             this.btnReturn.IconColor = System.Drawing.Color.Black;
             this.btnReturn.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnReturn.Location = new System.Drawing.Point(322, 64);
+            this.btnReturn.Location = new System.Drawing.Point(844, 334);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(132, 115);
             this.btnReturn.TabIndex = 86;
@@ -81,12 +82,29 @@
             this.prvInvoices.Name = "prvInvoices";
             this.prvInvoices.Visible = false;
             // 
+            // btnPreviewWhanau
+            // 
+            this.btnPreviewWhanau.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreviewWhanau.IconChar = FontAwesome.Sharp.IconChar.Print;
+            this.btnPreviewWhanau.IconColor = System.Drawing.Color.Black;
+            this.btnPreviewWhanau.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPreviewWhanau.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnPreviewWhanau.Location = new System.Drawing.Point(399, 55);
+            this.btnPreviewWhanau.Name = "btnPreviewWhanau";
+            this.btnPreviewWhanau.Size = new System.Drawing.Size(223, 115);
+            this.btnPreviewWhanau.TabIndex = 88;
+            this.btnPreviewWhanau.Text = "PREVIEW CUSTOMER REPORT";
+            this.btnPreviewWhanau.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPreviewWhanau.UseVisualStyleBackColor = true;
+            this.btnPreviewWhanau.Click += new System.EventHandler(this.btnPreviewWhanau_Click);
+            // 
             // competitorReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(73)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(540, 242);
+            this.ClientSize = new System.Drawing.Size(1083, 461);
+            this.Controls.Add(this.btnPreviewWhanau);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnReturn);
             this.Name = "competitorReportForm";
@@ -102,5 +120,6 @@
         private FontAwesome.Sharp.IconButton btnReturn;
         private System.Drawing.Printing.PrintDocument printInvoices;
         private System.Windows.Forms.PrintPreviewDialog prvInvoices;
+        private FontAwesome.Sharp.IconButton btnPreviewWhanau;
     }
 }

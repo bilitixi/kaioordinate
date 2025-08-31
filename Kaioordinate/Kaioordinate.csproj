@@ -154,6 +154,12 @@
     <Compile Include="whanauMaintenanceForm.Designer.cs">
       <DependentUpon>whanauMaintenanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="whanauReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="whanauReportForm.Designer.cs">
+      <DependentUpon>whanauReportForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="competitorReportForm.resx">
       <DependentUpon>competitorReportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="whanauMaintenanceForm.resx">
       <DependentUpon>whanauMaintenanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="whanauReportForm.resx">
+      <DependentUpon>whanauReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="dsKaioordinate.xsc">
       <DependentUpon>dsKaioordinate.xsd</DependentUpon>

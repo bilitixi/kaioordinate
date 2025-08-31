@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Kaioordinate
 {
@@ -173,6 +175,14 @@ topMargin + (linesSoFarHeading * textFont.Height));
         private void btnReturn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+       
+       
+
+        private void btnPreviewWhanau_Click(object sender, EventArgs e)
+        {
+            whanauReportForm whanauReportFrm = new whanauReportForm(DM.dtWhanau);
+            whanauReportFrm.ShowDialog();
         }
 
         private void competitorReportForm_Load(object sender, EventArgs e)
