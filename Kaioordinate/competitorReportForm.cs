@@ -185,9 +185,15 @@ topMargin + (linesSoFarHeading * textFont.Height));
             whanauReportFrm.ShowDialog();
         }
 
+        private void btnPreviewLocationPreview_Click(object sender, EventArgs e)
+        {
+            locationReportForm locationReportFrm = new locationReportForm(DM.dtLocation);
+            locationReportFrm.ShowDialog();
+        }
+
         private void competitorReportForm_Load(object sender, EventArgs e)
         {
-
+          
         }
 
       

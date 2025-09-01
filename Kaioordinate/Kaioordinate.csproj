@@ -134,6 +134,12 @@
     <Compile Include="locationMaintenanceForm.Designer.cs">
       <DependentUpon>locationMaintenanceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="locationReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="locationReportForm.Designer.cs">
+      <DependentUpon>locationReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="locationMaintenanceForm.resx">
       <DependentUpon>locationMaintenanceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="locationReportForm.resx">
+      <DependentUpon>locationReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
