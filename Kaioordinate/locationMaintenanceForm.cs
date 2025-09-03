@@ -161,11 +161,20 @@ namespace Kaioordinate
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DataRow deleteLocationRow = DM.dtLocation.Rows[currencyManager.Position];
-            if (MessageBox.Show("Are you sure you want to delete this location?", "Warning",
-            MessageBoxButtons.OKCancel) == DialogResult.OK)
+            DataRow[] locationEvent = DM.dtEvent.Select("LocationID =" + deleteLocationRow["locationID"].ToString());
+            if (locationEvent.Length == 0)
             {
-                deleteLocationRow.Delete();
-                DM.updateLocation();
+                if (MessageBox.Show("Are you sure you want to delete this location?", "Warning",
+                MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    deleteLocationRow.Delete();
+                    DM.updateLocation();
+                }
+            }
+            else
+            {
+                MessageBox.Show("You may only delete locations that have no events", "Error");
+
             }
         }
     }
