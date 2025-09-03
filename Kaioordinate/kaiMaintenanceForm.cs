@@ -203,7 +203,7 @@ namespace Kaioordinate
             }
             else
             {
-                MessageBox.Show("You may only delete a kai that has no event relation");
+                MessageBox.Show("You may only delete a kai that has no event relation","Error");
             }
           
         }

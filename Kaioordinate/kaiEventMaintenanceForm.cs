@@ -159,11 +159,19 @@ namespace Kaioordinate
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DataRow deleteEventRow = DM.dtEvent.Rows[currencyManager.Position];
-            if (MessageBox.Show("Are you sure you want to delete this event?", "Warning",
-            MessageBoxButtons.OKCancel) == DialogResult.OK)
+            DataRow[] eventKai = DM.dtKai.Select("EventID = " + deleteEventRow["EventID"].ToString());
+            if (eventKai.Length == 0)
             {
-                deleteEventRow.Delete();
-                DM.updateEvent();
+                if (MessageBox.Show("Are you sure you want to delete this event?", "Warning",
+                MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    deleteEventRow.Delete();
+                    DM.updateEvent();
+                }
+            }
+            else
+            {
+                MessageBox.Show("You may only delete an event that has no kai", "Error");
             }
         }
     }
