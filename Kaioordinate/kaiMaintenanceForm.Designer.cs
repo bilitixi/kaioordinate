@@ -329,6 +329,7 @@
             this.pCboEvent.Name = "pCboEvent";
             this.pCboEvent.Size = new System.Drawing.Size(261, 24);
             this.pCboEvent.TabIndex = 96;
+            this.pCboEvent.Click += new System.EventHandler(this.pCboEvent_Click);
             // 
             // label11
             // 

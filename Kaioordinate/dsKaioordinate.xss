@@ -13,19 +13,7 @@
     <Shape ID="DesignTable:WHANAU" ZOrder="5" X="1023" Y="70" Height="171" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="86" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:EVENT_KAI" ZOrder="3" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>220</X>
-          <Y>187</Y>
-        </Point>
-        <Point>
-          <X>601</X>
-          <Y>187</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:LOCATION_EVENT" ZOrder="2" LineWidth="11">
+    <Connector ID="DesignRelation:LOCATION_EVENT" ZOrder="3" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>164</X>
@@ -37,7 +25,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:EVENT_EVENTREGISTER" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:EVENT_EVENTREGISTER" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>203</X>
@@ -50,6 +38,18 @@
         <Point>
           <X>386</X>
           <Y>426</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:EVENT_KAI" ZOrder="1" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>220</X>
+          <Y>187</Y>
+        </Point>
+        <Point>
+          <X>601</X>
+          <Y>187</Y>
         </Point>
       </RoutePoints>
     </Connector>

@@ -33,16 +33,16 @@ namespace Kaioordinate
             nudTime.DataBindings.Add("Text", DM.dsKaioordinate, "KAI.PreparationMinutes");
             nudQuantity.DataBindings.Add("Text", DM.dsKaioordinate, "KAI.ServeQuantity");
             txtStatus.DataBindings.Add("Text", DM.dsKaioordinate, "KAI.PreparationRequired");
+
+            // Bind the SelectedValue of ComboBox to KAI.EventID
+            cboEventName.DataBindings.Add("SelectedValue", DM.dsKaioordinate, "KAI.EventID");
             cboEventName.DisplayMember = "EventName";      // What user sees
             cboEventName.ValueMember = "EventID";          // The foreign key stored in KAI
             cboEventName.DataSource = DM.dsKaioordinate.Tables["EVENT"]; // Event table
 
-            // Bind the SelectedValue of ComboBox to KAI.EventID
-            cboEventName.DataBindings.Add("SelectedValue", DM.dsKaioordinate, "KAI.EventID");
-
-            pCboEvent.DataSource = DM.dsKaioordinate.Tables["EVENT"];
-            pCboEvent.DisplayMember = "EventName";   // what the user sees
-            pCboEvent.ValueMember = "EventID";
+           
+          
+           
 
             lstFood.DataSource = DM.dsKaioordinate;
             lstFood.DisplayMember = "KAI.KaiName";
@@ -73,6 +73,10 @@ namespace Kaioordinate
             // change status, load panel, clear fields
             status = "Add";
             panel.Visible = true;
+            // null event initialy
+            pCboEvent.SelectedIndex = -1;
+           
+            pCboEvent.Text = " ";
             disableButton(false);
             clearField();
 
@@ -89,8 +93,23 @@ namespace Kaioordinate
                 {
                     MessageBox.Show("Please enter the Kai Name");
                 }
+                else if (pCboEvent.SelectedIndex == -1)
+                {
+                    newKai["KaiName"] = pTxtName.Text;
+                    newKai["PreparationRequired"] = pCheckBox.Checked;
+                    newKai["PreparationMinutes"] = pNudTime.Value;
+                    newKai["ServeQuantity"] = pNudQuantity.Value;
+                    newKai["EventID"] = DBNull.Value;
+                    DM.dtKai.Rows.Add(newKai);
+                    DM.updateKai();
+                    MessageBox.Show("Kai maintenance added successfully", "Success");
+
+
+                }
+                
                 else
                 {
+
                     newKai["KaiName"] = pTxtName.Text;
                     newKai["PreparationRequired"]=  pCheckBox.Checked;
                     newKai["PreparationMinutes"] = pNudTime.Value;
@@ -122,9 +141,11 @@ namespace Kaioordinate
 
                     currencyManager.EndCurrentEdit();
                     DM.updateKai();
-                    MessageBox.Show("Kai maintenance updated successfully", "Success");
+                    MessageBox.Show($"Kai maintenance updated successfully ", "Success");
                 }
             }
+            // clear bindings
+            pCboEvent.DataBindings.Clear();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -146,6 +167,8 @@ namespace Kaioordinate
         private void pBtnCancel_Click(object sender, EventArgs e)
         {
             panel.Visible = false;
+            // clear bindings
+            pCboEvent.DataBindings.Clear();
             disableButton(true);
         }
         private void clearField() // reset field
@@ -168,16 +191,31 @@ namespace Kaioordinate
         private void btnDeleteKai_Click(object sender, EventArgs e)
         {
             DataRow deleteKaiRow = DM.dtKai.Rows[currencyManager.Position];
-            if (MessageBox.Show("Are you sure you want to delete this ?", "Warning",
-            MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (Convert.IsDBNull(deleteKaiRow["EventID"]))
             {
-                deleteKaiRow.Delete();
-                DM.updateKai();
+               
+                if (MessageBox.Show("Are you sure you want to delete this ?", "Warning",
+                MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    deleteKaiRow.Delete();
+                    DM.updateKai();
+                }
+            }
+            else
+            {
+                MessageBox.Show("You may only delete a kai that has no event relation");
             }
           
         }
 
-
-
+        private void pCboEvent_Click(object sender, EventArgs e)
+        {
+            // bind combo box to the table
+            pCboEvent.DataBindings.Add("SelectedValue", DM.dsKaioordinate, "KAI.EventID");
+            pCboEvent.DataSource = DM.dsKaioordinate.Tables["EVENT"];
+            pCboEvent.DisplayMember = "EventName";   // what the user sees
+            pCboEvent.ValueMember = "EventID";
+           
+        }
     }
 }

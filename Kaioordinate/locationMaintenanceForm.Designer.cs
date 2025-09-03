@@ -221,7 +221,7 @@
             this.panel.Controls.Add(this.pTxtAddress);
             this.panel.Controls.Add(this.pTxtLocationName);
             this.panel.Controls.Add(this.pTxtLocationID);
-            this.panel.Location = new System.Drawing.Point(28, 38);
+            this.panel.Location = new System.Drawing.Point(31, 38);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(999, 355);
             this.panel.TabIndex = 88;
