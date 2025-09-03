@@ -157,11 +157,20 @@ namespace Kaioordinate
         {
 
             DataRow deleteWhanauRow = DM.dtWhanau.Rows[currencyManager.Position];
-            if (MessageBox.Show("Are you sure you want to delete this whanau?", "Warning",
-            MessageBoxButtons.OKCancel) == DialogResult.OK)
+            DataRow[] whannauRegistration = DM.dtEventRegister.Select("WhanauID =" + deleteWhanauRow["WhanauID"].ToString());
+            if (whannauRegistration.Length == 0)
             {
-                deleteWhanauRow.Delete();
-                DM.updateWhanau();
+                if (MessageBox.Show("Are you sure you want to delete this whanau?", "Warning",
+                MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    deleteWhanauRow.Delete();
+                    DM.updateWhanau();
+                }
+              
+            }
+            else
+            {
+                MessageBox.Show("You may only delete records that have no registration", "Error");
             }
 
         }
