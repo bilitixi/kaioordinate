@@ -81,6 +81,7 @@
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(667, 57);
             this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(114, 34);
             this.txtID.TabIndex = 1;
             // 
@@ -89,6 +90,7 @@
             this.txtFoodName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFoodName.Location = new System.Drawing.Point(667, 193);
             this.txtFoodName.Name = "txtFoodName";
+            this.txtFoodName.ReadOnly = true;
             this.txtFoodName.Size = new System.Drawing.Size(260, 34);
             this.txtFoodName.TabIndex = 3;
             // 
@@ -97,6 +99,7 @@
             this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStatus.Location = new System.Drawing.Point(667, 260);
             this.txtStatus.Name = "txtStatus";
+            this.txtStatus.ReadOnly = true;
             this.txtStatus.Size = new System.Drawing.Size(84, 34);
             this.txtStatus.TabIndex = 4;
             // 
@@ -261,6 +264,7 @@
             // 
             this.nudTime.Location = new System.Drawing.Point(661, 337);
             this.nudTime.Name = "nudTime";
+            this.nudTime.ReadOnly = true;
             this.nudTime.Size = new System.Drawing.Size(120, 22);
             this.nudTime.TabIndex = 84;
             // 
@@ -268,6 +272,7 @@
             // 
             this.nudQuantity.Location = new System.Drawing.Point(661, 397);
             this.nudQuantity.Name = "nudQuantity";
+            this.nudQuantity.ReadOnly = true;
             this.nudQuantity.Size = new System.Drawing.Size(120, 22);
             this.nudQuantity.TabIndex = 85;
             // 
@@ -285,7 +290,7 @@
             this.panel.Controls.Add(this.label9);
             this.panel.Controls.Add(this.label10);
             this.panel.Controls.Add(this.pTxtName);
-            this.panel.Location = new System.Drawing.Point(49, 31);
+            this.panel.Location = new System.Drawing.Point(59, 15);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(974, 411);
             this.panel.TabIndex = 86;
