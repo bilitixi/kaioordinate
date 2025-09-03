@@ -57,10 +57,10 @@ namespace Kaioordinate
                 DataRow newEventRegister = DM.dtEventRegister.NewRow();
                 int whanauID = Convert.ToInt32(dgvWhanau["WhanauID", cmWhanau.Position].Value);
                 int eventID = Convert.ToInt32(dgvEvents["EventID", cmEvent.Position].Value);
-                int index = DM.eventRegisterView.Find(whanauID);
-                if (index != -1)
+                
+                if (IsDuplicate(whanauID, eventID))
                 {
-                    MessageBox.Show("Whanau is already participates in the event.", "Error");
+                    MessageBox.Show("Whanau is already participates in this event.", "Error");
 
                 }
                 else
@@ -85,8 +85,22 @@ namespace Kaioordinate
         {
 
         }
+        private bool IsDuplicate(int whanauID, int eventID)
+        {
+            foreach (DataRow row in DM.dtEventRegister.Rows)
+            {
+                if (Convert.ToInt32(row["WhanauID"]) == whanauID &&
+                    Convert.ToInt32(row["EventID"]) == eventID &&
+                    row.RowState != DataRowState.Deleted)  // Ignore deleted rows
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
 
-        
+
+
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
