@@ -27,7 +27,7 @@ namespace Kaioordinate
             mainForm = mnu;
             cmEvent = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENT"];
             cmWhanau = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "WHANAU"];
-            cmRegistration = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENTREGISTER"];
+            cmRegistration = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENT.EVENT_EVENTREGISTER"];
             BindControls();
 
 
@@ -39,7 +39,7 @@ namespace Kaioordinate
             dgvEvents.DataMember = "EVENT";
 
             dgvRegistration.DataSource = DM.dsKaioordinate;
-            dgvRegistration.DataMember = "EVENTREGISTER";
+            dgvRegistration.DataMember = "EVENT.EVENT_EVENTREGISTER";
 
             dgvWhanau.DataSource = DM.dsKaioordinate;
             dgvWhanau.DataMember = "WHANAU";
