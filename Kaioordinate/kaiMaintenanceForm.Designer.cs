@@ -60,6 +60,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.pTxtName = new System.Windows.Forms.TextBox();
             this.cboEventName = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
             this.panel.SuspendLayout();
@@ -278,6 +280,7 @@
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.label12);
             this.panel.Controls.Add(this.pBtnCancel);
             this.panel.Controls.Add(this.pBtnSave);
             this.panel.Controls.Add(this.pCboEvent);
@@ -290,7 +293,7 @@
             this.panel.Controls.Add(this.label9);
             this.panel.Controls.Add(this.label10);
             this.panel.Controls.Add(this.pTxtName);
-            this.panel.Location = new System.Drawing.Point(59, 15);
+            this.panel.Location = new System.Drawing.Point(84, 31);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(974, 411);
             this.panel.TabIndex = 86;
@@ -426,6 +429,28 @@
             this.cboEventName.Size = new System.Drawing.Size(175, 24);
             this.cboEventName.TabIndex = 97;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(742, 231);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(97, 29);
+            this.label12.TabIndex = 99;
+            this.label12.Text = "minutes";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(819, 337);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(97, 29);
+            this.label13.TabIndex = 100;
+            this.label13.Text = "minutes";
+            // 
             // kaiMaintenanceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -452,6 +477,7 @@
             this.Controls.Add(this.txtFoodName);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lstFood);
+            this.Controls.Add(this.label13);
             this.Name = "kaiMaintenanceForm";
             this.Text = "Kai Management";
             ((System.ComponentModel.ISupportInitialize)(this.nudTime)).EndInit();
@@ -499,5 +525,7 @@
         private FontAwesome.Sharp.IconButton pBtnCancel;
         private FontAwesome.Sharp.IconButton pBtnSave;
         private System.Windows.Forms.ComboBox cboEventName;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }

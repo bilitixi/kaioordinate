@@ -167,8 +167,9 @@ namespace Kaioordinate
         private void pBtnCancel_Click(object sender, EventArgs e)
         {
             panel.Visible = false;
-            // clear bindings
+            // clear bindings of combo box
             pCboEvent.DataBindings.Clear();
+            cboEventName.DataBindings.Clear();
             disableButton(true);
         }
         private void clearField() // reset field
