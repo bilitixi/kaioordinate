@@ -22,6 +22,7 @@ namespace Kaioordinate
         {
             InitializeComponent();
             table = dt;
+            // set up print components
             printDoc = new PrintDocument();
             printDoc.PrintPage += PrintDoc_PrintPage;
             printPreviewControl1.Document = printDoc;

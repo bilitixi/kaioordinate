@@ -14,23 +14,26 @@ namespace Kaioordinate
 {
     public partial class locationReportForm : Form
     {
+        // declare objects variable
         private PrintDocument printDoc;
         private DataTable table;
         int pageCount = 1;
-        public locationReportForm(DataTable dt)
+        public locationReportForm(DataTable dt) //constructor
         {
             InitializeComponent();
             table = dt;
+            // set up print components
             printDoc = new PrintDocument();
             printDoc.PrintPage += PrintDoc_PrintPage;
             printPreviewControl1.Document = printDoc;
-            printPreviewControl1.Zoom = 0.5;
+            printPreviewControl1.Zoom = 0.5; // zoom level
         }
-        // class-level field
+        // current row
         private int currentRow = 0;
 
-        private void PrintDoc_PrintPage(object sender, PrintPageEventArgs e)
+        private void PrintDoc_PrintPage(object sender, PrintPageEventArgs e) // execute print page
         {
+            // layout variables
             Font boldfont = new Font("Arial", 11, FontStyle.Bold);
             Font font = new Font("Arial", 10);
             int lineHeight = font.Height + 4;
@@ -111,7 +114,7 @@ namespace Kaioordinate
         }
 
 
-        private void btnZin_Click(object sender, EventArgs e)
+        private void btnZin_Click(object sender, EventArgs e) // zoom in function
         {
             if (printPreviewControl1.Zoom < 2) // minimum zoom
             {
@@ -119,14 +122,14 @@ namespace Kaioordinate
             }
         }
 
-        private void btnZout_Click(object sender, EventArgs e)
+        private void btnZout_Click(object sender, EventArgs e) // zoom out function
         {
-            if (printPreviewControl1.Zoom > 0.1) // minimum zoom
+            if (printPreviewControl1.Zoom > 0.1) // maximum zoom
             {
                 printPreviewControl1.Zoom -= 0.1;
             }
         }
-        private void btnNext_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e) // next page button
         {
             if (printPreviewControl1.StartPage < printPreviewControl1.Document.PrinterSettings.MaximumPage - 1)
             {
@@ -134,7 +137,7 @@ namespace Kaioordinate
             }
         }
 
-        private void btnPrev_Click(object sender, EventArgs e)
+        private void btnPrev_Click(object sender, EventArgs e) // previous page buttin
         {
             if (printPreviewControl1.StartPage > 0)
             {
@@ -142,12 +145,12 @@ namespace Kaioordinate
             }
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void btnReturn_Click(object sender, EventArgs e) // return  utton
         {
             Close();
         }
 
-        private void btnExport_Click(object sender, EventArgs e)
+        private void btnExport_Click(object sender, EventArgs e) // print and save document
         {
             printDoc.Print();
         }
