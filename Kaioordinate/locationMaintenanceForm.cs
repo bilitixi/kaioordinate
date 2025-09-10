@@ -96,13 +96,13 @@ namespace Kaioordinate
             disableButton(false);
             clearField();
         }
-        private void clearField()
+        private void clearField() // clear text field
         {
             pTxtAddress.Text = "";
             pTxtLocationName.Text = "";
 
         }
-        private void disableButton(bool status)
+        private void disableButton(bool status) //disable buttons
         {
             btnAdd.Enabled = status;
             btnUpdate.Enabled = status;
@@ -112,7 +112,7 @@ namespace Kaioordinate
             btnDelete.Enabled = status;
         }
 
-        private void pBtnCancel_Click(object sender, EventArgs e)
+        private void pBtnCancel_Click(object sender, EventArgs e) // disable panel visibility
         {
             panel.Visible = false;
             disableButton(true);
@@ -123,12 +123,12 @@ namespace Kaioordinate
             // save button if status is add
             if (status == "Add")
             {
-                DataRow newLocation = DM.dtLocation.NewRow();
-                if ((pTxtLocationName.Text == "") || (pTxtAddress.Text == ""))
+                DataRow newLocation = DM.dtLocation.NewRow(); // get new row
+                if ((pTxtLocationName.Text == "") || (pTxtAddress.Text == "")) // if the field is blank
                 {
                     MessageBox.Show("Please enter the the address and location name");
                 }
-                else
+                else // if the field is not blank
                 {
                     newLocation["LocationName"] = pTxtLocationName.Text;
                     newLocation["Address"] = pTxtAddress.Text;
@@ -144,11 +144,11 @@ namespace Kaioordinate
             {
 
                 DataRow updateLocationRow = DM.dtLocation.Rows[currencyManager.Position];
-                if ((pTxtLocationName.Text == "") || (pTxtAddress.Text == ""))
+                if ((pTxtLocationName.Text == "") || (pTxtAddress.Text == "")) // blank field
                 {
                     MessageBox.Show("You must type in the location name and address  ", "Error");
                 }
-                else
+                else // field not blank
                 {
                     updateLocationRow["LocationName"] = pTxtLocationName.Text;
                     updateLocationRow["Address"] = pTxtAddress.Text;
@@ -162,11 +162,11 @@ namespace Kaioordinate
 
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e) // delete location
         {
             DataRow deleteLocationRow = DM.dtLocation.Rows[currencyManager.Position];
-            DataRow[] locationEvent = DM.dtEvent.Select("LocationID =" + deleteLocationRow["locationID"].ToString());
-            if (locationEvent.Length == 0)
+            DataRow[] locationEvent = DM.dtEvent.Select("LocationID =" + deleteLocationRow["locationID"].ToString()); // retrieve events assign to location
+            if (locationEvent.Length == 0) // if no events
             {
                 if (MessageBox.Show("Are you sure you want to delete this location?", "Warning",
                 MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -175,7 +175,7 @@ namespace Kaioordinate
                     DM.updateLocation();
                 }
             }
-            else
+            else // if there is event
             {
                 MessageBox.Show("You may only delete locations that have no events", "Error");
 
