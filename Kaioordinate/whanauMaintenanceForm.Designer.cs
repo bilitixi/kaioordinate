@@ -158,6 +158,7 @@
             this.txtLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLastname.Location = new System.Drawing.Point(625, 142);
             this.txtLastname.Name = "txtLastname";
+            this.txtLastname.ReadOnly = true;
             this.txtLastname.Size = new System.Drawing.Size(260, 34);
             this.txtLastname.TabIndex = 40;
             // 
@@ -166,6 +167,7 @@
             this.txtFirstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFirstname.Location = new System.Drawing.Point(625, 101);
             this.txtFirstname.Name = "txtFirstname";
+            this.txtFirstname.ReadOnly = true;
             this.txtFirstname.Size = new System.Drawing.Size(260, 34);
             this.txtFirstname.TabIndex = 39;
             // 
@@ -174,6 +176,7 @@
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(625, 50);
             this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(95, 34);
             this.txtID.TabIndex = 38;
             // 
@@ -191,6 +194,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(626, 190);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(260, 34);
             this.txtEmail.TabIndex = 69;
             // 
@@ -199,6 +203,7 @@
             this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.Location = new System.Drawing.Point(626, 249);
             this.txtPhone.Name = "txtPhone";
+            this.txtPhone.ReadOnly = true;
             this.txtPhone.Size = new System.Drawing.Size(180, 34);
             this.txtPhone.TabIndex = 70;
             // 
@@ -208,6 +213,7 @@
             this.txtAddress.Location = new System.Drawing.Point(626, 299);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ReadOnly = true;
             this.txtAddress.Size = new System.Drawing.Size(260, 49);
             this.txtAddress.TabIndex = 71;
             // 
@@ -292,9 +298,9 @@
             this.panel.Controls.Add(this.label11);
             this.panel.Controls.Add(this.pTxtLastname);
             this.panel.Controls.Add(this.pTxtFirstName);
-            this.panel.Location = new System.Drawing.Point(45, 24);
+            this.panel.Location = new System.Drawing.Point(45, 12);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(986, 404);
+            this.panel.Size = new System.Drawing.Size(986, 406);
             this.panel.TabIndex = 88;
             this.panel.Visible = false;
             // 
