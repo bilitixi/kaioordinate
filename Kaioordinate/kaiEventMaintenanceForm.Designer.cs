@@ -57,6 +57,7 @@
             // 
             // dtpDate
             // 
+            this.dtpDate.Enabled = false;
             this.dtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.Location = new System.Drawing.Point(595, 247);
@@ -200,7 +201,7 @@
             this.panel.Controls.Add(this.label7);
             this.panel.Controls.Add(this.label6);
             this.panel.Controls.Add(this.pTxtEventName);
-            this.panel.Location = new System.Drawing.Point(26, 27);
+            this.panel.Location = new System.Drawing.Point(26, 26);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1007, 398);
             this.panel.TabIndex = 84;

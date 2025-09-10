@@ -214,7 +214,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.ReadOnly = true;
-            this.txtAddress.Size = new System.Drawing.Size(260, 49);
+            this.txtAddress.Size = new System.Drawing.Size(260, 81);
             this.txtAddress.TabIndex = 71;
             // 
             // label5
@@ -298,7 +298,7 @@
             this.panel.Controls.Add(this.label11);
             this.panel.Controls.Add(this.pTxtLastname);
             this.panel.Controls.Add(this.pTxtFirstName);
-            this.panel.Location = new System.Drawing.Point(45, 12);
+            this.panel.Location = new System.Drawing.Point(45, 22);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(986, 406);
             this.panel.TabIndex = 88;
