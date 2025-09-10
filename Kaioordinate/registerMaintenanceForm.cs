@@ -17,8 +17,7 @@ namespace Kaioordinate
         private CurrencyManager cmEvent;
         private CurrencyManager cmRegistration;
         private CurrencyManager cmWhanau;
-        private DataTable dt = new DataTable();
-        private CurrencyManager cmdDt;
+       
 
         public registerMaintenanceForm(DataModule dm , mainForm mnu)
         {
@@ -70,6 +69,7 @@ namespace Kaioordinate
                     newEventRegister["KaiPreparation"] = checkBox.Checked;
 
                     DM.dsKaioordinate.Tables["EVENTREGISTER"].Rows.Add(newEventRegister);
+                    DM.updateEventRegister();
                     MessageBox.Show("Whanau is added.", "Successful");
                 }
             }
@@ -104,7 +104,15 @@ namespace Kaioordinate
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DataRow deleteEventRegister = DM.dtEventRegister.Rows[cmRegistration.Position];
+            if (cmRegistration.Position < 0)
+            {
+                MessageBox.Show("Please select a registration", "Error");
+                return;
+            }
+
+            DataRowView drv = (DataRowView)cmRegistration.Current;
+            DataRow deleteEventRegister = drv.Row;
+
             if (MessageBox.Show("Are you sure you want to delete this registration?", "Warning",
                     MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
@@ -113,6 +121,7 @@ namespace Kaioordinate
                 MessageBox.Show("Registration deleted successfully", "Acknowledgement", MessageBoxButtons.OK);
             }
         }
+
 
     }
 }
