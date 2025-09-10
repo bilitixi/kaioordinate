@@ -14,20 +14,23 @@ namespace Kaioordinate
 {
     public partial class kaiEventMaintenanceForm : Form
     {
-        private string status = "Add";
+        
+        private string status = "Add"; // variable for status
+        // declare form object
         private DataModule DM;
         private mainForm mainForm;
-        private CurrencyManager currencyManager;
-        public kaiEventMaintenanceForm(DataModule dm, mainForm mainFrm)
+        private CurrencyManager currencyManager; // declare currency manager
+        public kaiEventMaintenanceForm(DataModule dm, mainForm mainFrm) // form constructor
         {
             InitializeComponent();
             DM = dm;
             mainForm = mainFrm;
-            BindControls();
+            BindControls(); // call bindcontrol function
 
         }
-        public void BindControls()
+        public void BindControls() 
         {
+            // bind textfields 
             txtID.DataBindings.Add("Text", DM.dsKaioordinate, "EVENT.EventID");
             txtEventName.DataBindings.Add("Text", DM.dsKaioordinate, "EVENT.EventName");
             txtLocation.DataBindings.Add("Text", DM.dsKaioordinate, "EVENT.LocationID");
@@ -46,7 +49,7 @@ namespace Kaioordinate
             currencyManager = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENT"];
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e) // trigger add panel
         {
             // change status, load panel, clear fields
             status = "Add";
@@ -55,7 +58,7 @@ namespace Kaioordinate
             clearField();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e) // trigger update panel
         {
             // change status, load panel, clear fields
             status = "Update";
@@ -69,7 +72,7 @@ namespace Kaioordinate
 
         }
 
-        private void pBtnSave_Click(object sender, EventArgs e)
+        private void pBtnSave_Click(object sender, EventArgs e) // save function
         {
             // save button if status is add
             if (status == "Add")
@@ -114,13 +117,13 @@ namespace Kaioordinate
 
         }
 
-        private void pBtnCancel_Click(object sender, EventArgs e)
+        private void pBtnCancel_Click(object sender, EventArgs e) // cancel button
         {
-            panel.Visible = false;
+            panel.Visible = false; // hide panel
             disableButton(true);
         }
 
-        private void btnUp_Click(object sender, EventArgs e)
+        private void btnUp_Click(object sender, EventArgs e) // up button
         {
           
             if (currencyManager.Position > 0)
@@ -129,7 +132,7 @@ namespace Kaioordinate
             }
         }
 
-        private void btnDown_Click(object sender, EventArgs e)
+        private void btnDown_Click(object sender, EventArgs e) // down button
         {
             if (currencyManager.Position < currencyManager.Count - 1)
             {
@@ -137,16 +140,16 @@ namespace Kaioordinate
             }
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void btnReturn_Click(object sender, EventArgs e) // return button
         {
             Close();
         }
-        private void clearField()
+        private void clearField() // clear text field
         {
             pTxtEventName.Text = "";
 
         }
-        private void disableButton (bool status)
+        private void disableButton (bool status) // disable button function
         {
             btnAdd.Enabled = status;
             btnUpdate.Enabled = status;
@@ -156,11 +159,11 @@ namespace Kaioordinate
             btnDelete.Enabled = status;
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e) // delete function
         {
             DataRow deleteEventRow = DM.dtEvent.Rows[currencyManager.Position];
-            DataRow[] eventKai = DM.dtKai.Select("EventID = " + deleteEventRow["EventID"].ToString());
-            if (eventKai.Length == 0)
+            DataRow[] eventKai = DM.dtKai.Select("EventID = " + deleteEventRow["EventID"].ToString()); // retrieve kai assign for the event
+            if (eventKai.Length == 0) // if no kai assign for the event
             {
                 if (MessageBox.Show("Are you sure you want to delete this event?", "Warning",
                 MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -169,7 +172,7 @@ namespace Kaioordinate
                     DM.updateEvent();
                 }
             }
-            else
+            else // kai assigns for the event
             {
                 MessageBox.Show("You may only delete an event that has no kai", "Error");
             }
