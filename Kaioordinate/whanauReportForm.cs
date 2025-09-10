@@ -13,31 +13,34 @@ namespace Kaioordinate
 {
     public partial class whanauReportForm : Form
     {
+        // declare object variables
         private PrintDocument printDoc;
         private DataTable table;
-        int pageCount = 1;
+        int pageCount = 1; // page count
 
-        public whanauReportForm(DataTable dt)
+        public whanauReportForm(DataTable dt) // constructor
         {
             InitializeComponent();
             table = dt;
             printDoc = new PrintDocument();
             printDoc.PrintPage += PrintDoc_PrintPage;
             printPreviewControl1.Document = printDoc;
-            printPreviewControl1.Zoom = 0.5;
+            printPreviewControl1.Zoom = 0.5; //zoom level
         }
 
-        // class-level field
+        // current row
         private int currentRow = 0;
 
-        private void PrintDoc_PrintPage(object sender, PrintPageEventArgs e)
+        private void PrintDoc_PrintPage(object sender, PrintPageEventArgs e) // execute print
         {
+            // print layout variables
             Font boldfont = new Font("Arial", 11, FontStyle.Bold);
             Font font = new Font("Arial", 10);
             int lineHeight = font.Height + 4;
             int leftMargin = e.MarginBounds.Left;
             int topMargin = e.MarginBounds.Top;
             int y = topMargin;
+
             // draw footer before move to new page
             string footer = "Page " + pageCount;
             SizeF footerSize = e.Graphics.MeasureString(footer, font);
@@ -122,7 +125,7 @@ namespace Kaioordinate
         }
 
 
-        private void btnZin_Click(object sender, EventArgs e)
+        private void btnZin_Click(object sender, EventArgs e) // zoom in function
         {
             if (printPreviewControl1.Zoom < 2) // minimum zoom
             {
@@ -130,35 +133,35 @@ namespace Kaioordinate
             }
         }
 
-        private void btnZout_Click(object sender, EventArgs e)
+        private void btnZout_Click(object sender, EventArgs e) // zoom out function
         {
             if (printPreviewControl1.Zoom > 0.1) // minimum zoom
             {
                 printPreviewControl1.Zoom -= 0.1;
             }
         }
-        private void btnNext_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e) // next page function
         {
             if (printPreviewControl1.StartPage < printPreviewControl1.Document.PrinterSettings.MaximumPage - 1)
             {
-                printPreviewControl1.StartPage++;
+                printPreviewControl1.StartPage++; // increase current page
             }
         }
 
-        private void btnPrev_Click(object sender, EventArgs e)
+        private void btnPrev_Click(object sender, EventArgs e) // previous page function
         {
             if (printPreviewControl1.StartPage > 0)
             {
-                printPreviewControl1.StartPage--;
+                printPreviewControl1.StartPage--; // decrease current page
             }
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void btnReturn_Click(object sender, EventArgs e) // close function
         {
             Close();
         }
 
-        private void btnExport_Click(object sender, EventArgs e)
+        private void btnExport_Click(object sender, EventArgs e) // print and save document
         {
             printDoc.Print();
         }
