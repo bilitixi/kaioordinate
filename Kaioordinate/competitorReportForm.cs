@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace Kaioordinate
@@ -35,7 +34,7 @@ namespace Kaioordinate
             string strSort = "EventID";
             invoicesForPrint = DM.dsKaioordinate.Tables["EVENT"].Select(strFilter, strSort, DataViewRowState.CurrentRows); // total number of invoices 
             pagesAmountExpected = invoicesForPrint.Length; // number of pages
-            prvInvoices.Show();
+            prvInvoices.ShowDialog();
         }
 
         private void printInvoices_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -50,17 +49,17 @@ namespace Kaioordinate
             DataRow drEvent = invoicesForPrint[amountOfInvoicesPrinted];
 
             //currency manager declaration
-            CurrencyManager cmEvent;
+           
             CurrencyManager cmWhanau;
             CurrencyManager cmLocation;
-            CurrencyManager cmEventRegister;
+           
             
 
             //  assign values for the currency manager
-            cmEvent = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENT"];
+           
             cmWhanau = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "WHANAU"];
             cmLocation = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "LOCATION"];
-            cmEventRegister = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENTREGISTER"];
+           
             // create brush
             Brush brush = new SolidBrush(Color.Black);
             //margins 
