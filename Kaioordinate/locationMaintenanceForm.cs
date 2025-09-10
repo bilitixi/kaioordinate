@@ -155,7 +155,7 @@ namespace Kaioordinate
                     
 
                     currencyManager.EndCurrentEdit();
-                    DM.updateEvent();
+                    DM.updateLocation();
                     MessageBox.Show("Event updated successfully", "Success");
                 }
             }

@@ -13,12 +13,13 @@ namespace Kaioordinate
 {
     public partial class DataModule : Form
     {
+        // declare datatable objects variable
         public DataTable dtLocation;
         public DataTable dtEvent;
         public DataTable dtEventRegister;
         public DataTable dtWhanau;
         public DataTable dtKai;
-
+        //declare dataview objects variable
         public DataView locationView;
         public DataView eventView;
         public DataView eventRegisterView;
@@ -27,45 +28,45 @@ namespace Kaioordinate
 
 
 
-        public DataModule()
+        public DataModule() // constructor
         {
             InitializeComponent();
-            dsKaioordinate.EnforceConstraints = false;
-
+            dsKaioordinate.EnforceConstraints = false; // remove sonstraint
+            // fill data adapter
             daEvent.Fill(dsKaioordinate);
             daEventRegister.Fill(dsKaioordinate);
             daKai.Fill(dsKaioordinate);
             daLocation.Fill(dsKaioordinate);
             daWhanau.Fill(dsKaioordinate);
-
+            // assign data for data table
             dtEvent = dsKaioordinate.Tables["EVENT"];
             dtEventRegister = dsKaioordinate.Tables["EVENTREGISTER"];
             dtKai = dsKaioordinate.Tables["KAI"];
             dtLocation = dsKaioordinate.Tables["LOCATION"];
             dtWhanau = dsKaioordinate.Tables["WHANAU"];
-
+            // assign data for data view
             locationView = new DataView(dtLocation);
             eventView = new DataView(dtEvent);
             eventRegisterView = new DataView(dtEventRegister);
             whanauView = new DataView(dtWhanau);
             kaiView = new DataView(dtKai);
-
+            // sort order for data view
             locationView.Sort = "LocationID";
             eventView.Sort = "EventID";
             eventRegisterView.Sort = "WhanauID";
             whanauView.Sort = "WhanauID";
             kaiView.Sort = "KaiID";
-
+            // enforce constraint
             dsKaioordinate.EnforceConstraints = true;
 
 
         }
-        public void updateKai()
+        public void updateKai() // update Kai table
         {
             daKai.Update(dtKai);
         }
 
-        private void daKai_RowUpdated(object sender, OleDbRowUpdatedEventArgs e)
+        private void daKai_RowUpdated(object sender, OleDbRowUpdatedEventArgs e) // add new row to kai
         {
 
             // Include a variable and a command to retrieve 
@@ -80,12 +81,12 @@ namespace Kaioordinate
                 e.Row["KaiID"] = newID;
             }
         }
-        public void updateEvent()
+        public void updateEvent() // update event table
         {
             daEvent.Update(dtEvent);
         }
 
-        private void daEvent_RowUpdated(object sender, OleDbRowUpdatedEventArgs e)
+        private void daEvent_RowUpdated(object sender, OleDbRowUpdatedEventArgs e) // add new row to event table
         {
             int newID = 0;
             OleDbCommand idCMD = new OleDbCommand("SELECT @@IDENTITY", oleDbConnection1);
@@ -97,12 +98,12 @@ namespace Kaioordinate
                 e.Row["EventID"] = newID;
             }
         }
-        public void updateLocation()
+        public void updateLocation() // update location table
         {
             daLocation.Update(dtLocation);
         }
 
-        private void daLocation_RowUpdated(object sender, OleDbRowUpdatedEventArgs e)
+        private void daLocation_RowUpdated(object sender, OleDbRowUpdatedEventArgs e) // add new row to table location
         {
             int newID = 0;
             OleDbCommand idCMD = new OleDbCommand("SELECT @@IDENTITY", oleDbConnection1);
@@ -115,12 +116,12 @@ namespace Kaioordinate
             }
 
         }
-        public void updateWhanau()
+        public void updateWhanau() // update whanau table
         {
             daWhanau.Update(dtWhanau);
         }
 
-        private void daWhanau_RowUpdated(object sender, OleDbRowUpdatedEventArgs e)
+        private void daWhanau_RowUpdated(object sender, OleDbRowUpdatedEventArgs e) // add new row to whananu table
         {
             int newID = 0;
             OleDbCommand idCMD = new OleDbCommand("SELECT @@IDENTITY", oleDbConnection1);
@@ -131,12 +132,12 @@ namespace Kaioordinate
                 e.Row["WhanauID"] = newID;
             }
         }
-        public void updateEventRegister()
+        public void updateEventRegister() // update event register table
         {
             daEventRegister.Update(dtEventRegister);
         }
 
-        private void daEventRegister_RowUpdated(object sender, OleDbRowUpdatedEventArgs e)
+        private void daEventRegister_RowUpdated(object sender, OleDbRowUpdatedEventArgs e) // update new row to event register table
         {
             int newID = 0;
             OleDbCommand idCMD = new OleDbCommand("SELECT @@IDENTITY", oleDbConnection1);
