@@ -12,38 +12,42 @@ namespace Kaioordinate
 {
     public partial class locationMaintenanceForm : Form
     {
-        private string status = "Add";
+        
+        private string status = "Add"; // status variable
+        // declare forms objects
         private DataModule DM;
         private mainForm mainForm;
-        private CurrencyManager currencyManager;
-        public locationMaintenanceForm(DataModule dm, mainForm mainFrm)
+        private CurrencyManager currencyManager; // declare currrency manager
+        public locationMaintenanceForm(DataModule dm, mainForm mainFrm) // constructor
         {
             InitializeComponent();
             DM = dm;
             mainForm = mainFrm;
 
-            BindControls();
+            BindControls();  // call bindcontrol function
 
 
         }
+
         public void BindControls()
         {
+            // bind textfields with location
             txtID.DataBindings.Add("Text", DM.dsKaioordinate, "LOCATION.LocationID");
             txtName.DataBindings.Add("Text", DM.dsKaioordinate, "LOCATION.LocationName");
             txtAddress.DataBindings.Add("Text", DM.dsKaioordinate, "LOCATION.Address");
 
             
 
-
+            //  bind listLocation
             lstLocation.DataSource = DM.dsKaioordinate;
             lstLocation.DisplayMember = "LOCATION.LocationName";
             lstLocation.ValueMember = "LOCATION.LocationName";
-            currencyManager = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "LOCATION"];
+            currencyManager = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "LOCATION"]; // currency manager for the selected item in the lst location
 
            
         }
 
-        private void btnUp_Click(object sender, EventArgs e)
+        private void btnUp_Click(object sender, EventArgs e) // up button
         {
             if (currencyManager.Position > 0)
             {
@@ -52,7 +56,7 @@ namespace Kaioordinate
 
         }
 
-        private void btnDown_Click(object sender, EventArgs e)
+        private void btnDown_Click(object sender, EventArgs e) // down button
         {
 
             if (currencyManager.Position < currencyManager.Count - 1)
@@ -61,12 +65,12 @@ namespace Kaioordinate
             }
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void btnReturn_Click(object sender, EventArgs e) // return button
         {
             Close();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e) // trigger update panel
         {
             // change status, load panel, clear fields
             status = "Update";
@@ -81,7 +85,7 @@ namespace Kaioordinate
             pTxtLocationName.Text = txtName.Text;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e) // trigger add panel
         {
             // change status, load panel, clear fields
             status = "Add";
@@ -114,7 +118,7 @@ namespace Kaioordinate
             disableButton(true);
         }
 
-        private void pBtnSave_Click(object sender, EventArgs e)
+        private void pBtnSave_Click(object sender, EventArgs e) // save function
         {
             // save button if status is add
             if (status == "Add")
