@@ -14,31 +14,33 @@ namespace Kaioordinate
 {
     public partial class competitorReportForm : Form
     {
+        // declare forms objects
         private DataModule DM;
         private mainForm mainForm;
 
+        // declare variables for printing
         private int amountOfInvoicesPrinted, pagesAmountExpected;
         private DataRow[] invoicesForPrint;
-        public competitorReportForm(DataModule dm, mainForm mainFrm)
+        public competitorReportForm(DataModule dm, mainForm mainFrm) // constructor
         {
             InitializeComponent();
             DM = dm;
             mainForm = mainFrm;
           
         }
-        private void btnReport_Click(object sender, EventArgs e)
+        private void btnReport_Click(object sender, EventArgs e) // click report button
         {
-            amountOfInvoicesPrinted = 0;
+            amountOfInvoicesPrinted = 0; // initial amount of invoices printed
             string strFilter = "";
             string strSort = "EventID";
-            invoicesForPrint = DM.dsKaioordinate.Tables["EVENT"].Select(strFilter, strSort, DataViewRowState.CurrentRows);
-            pagesAmountExpected = invoicesForPrint.Length;
+            invoicesForPrint = DM.dsKaioordinate.Tables["EVENT"].Select(strFilter, strSort, DataViewRowState.CurrentRows); // total number of invoices 
+            pagesAmountExpected = invoicesForPrint.Length; // number of pages
             prvInvoices.Show();
         }
 
         private void printInvoices_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-
+            // layout variable for printing
             Graphics g = e.Graphics;
             int linesSoFarHeading = 0;
             Font textFont = new Font("Arial", 12, FontStyle.Regular);
@@ -47,17 +49,19 @@ namespace Kaioordinate
             Font headingFont = new Font("Arial", 12, FontStyle.Bold);
             DataRow drEvent = invoicesForPrint[amountOfInvoicesPrinted];
 
+            //currency manager declaration
             CurrencyManager cmEvent;
             CurrencyManager cmWhanau;
             CurrencyManager cmLocation;
             CurrencyManager cmEventRegister;
-            double EventTotal = 0;
+            
 
+            //  assign values for the currency manager
             cmEvent = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENT"];
             cmWhanau = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "WHANAU"];
             cmLocation = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "LOCATION"];
             cmEventRegister = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENTREGISTER"];
-
+            // create brush
             Brush brush = new SolidBrush(Color.Black);
             //margins 
             int leftMargin = e.MarginBounds.Left;
@@ -115,13 +119,13 @@ topMargin + (linesSoFarHeading * textFont.Height));
             // retireve data from other table
 
             DataRow[] drEventRegistration = drEvent.GetChildRows(DM.dtEvent.ChildRelations["EVENT_EVENTREGISTER"]);
-            if(drEventRegistration.Length == 0)
+            if(drEventRegistration.Length == 0) // no data
             {
                 g.DrawString("No attendees for this event", headingFont, brush, leftMargin + headingLeftMargin,
 topMargin + (linesSoFarHeading * textFont.Height));
 
             }
-            else
+            else // there is data
             {
                 foreach(DataRow drEventRegister in drEventRegistration)
 
@@ -162,9 +166,9 @@ topMargin + (linesSoFarHeading * textFont.Height));
 
 
 
-            amountOfInvoicesPrinted++;
+            amountOfInvoicesPrinted++; // increase the number of invoices printed
 
-            if (!(amountOfInvoicesPrinted == pagesAmountExpected))
+            if (!(amountOfInvoicesPrinted == pagesAmountExpected)) // id there is more page
             {
                 e.HasMorePages = true;
             }
@@ -172,30 +176,26 @@ topMargin + (linesSoFarHeading * textFont.Height));
 
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void btnReturn_Click(object sender, EventArgs e) // return function
         {
             Close();
         }
        
        
 
-        private void btnPreviewWhanau_Click(object sender, EventArgs e)
+        private void btnPreviewWhanau_Click(object sender, EventArgs e) // open whanau report
         {
             whanauReportForm whanauReportFrm = new whanauReportForm(DM.dtWhanau);
             whanauReportFrm.ShowDialog();
         }
 
-        private void btnPreviewLocationPreview_Click(object sender, EventArgs e)
+        private void btnPreviewLocationPreview_Click(object sender, EventArgs e) // opent location report
         {
             locationReportForm locationReportFrm = new locationReportForm(DM.dtLocation);
             locationReportFrm.ShowDialog();
         }
 
-        private void competitorReportForm_Load(object sender, EventArgs e)
-        {
-          
-        }
-
+       
       
     }
 }
