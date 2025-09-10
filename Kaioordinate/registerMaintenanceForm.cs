@@ -12,6 +12,7 @@ namespace Kaioordinate
 {
     public partial class registerMaintenanceForm : Form
     {
+        // declare forms objects and currency manager 
         private DataModule DM;
         private mainForm mainForm;
         private CurrencyManager cmEvent;
@@ -19,22 +20,23 @@ namespace Kaioordinate
         private CurrencyManager cmWhanau;
        
 
-        public registerMaintenanceForm(DataModule dm , mainForm mnu)
+        public registerMaintenanceForm(DataModule dm , mainForm mnu) // constructor
         {
             InitializeComponent();
             DM= dm;
             mainForm = mnu;
-            cmEvent = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENT"];
-            cmWhanau = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "WHANAU"];
-            cmRegistration = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENT.EVENT_EVENTREGISTER"];
+            cmEvent = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENT"]; // bind event table
+            cmWhanau = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "WHANAU"]; // bind whanau table
+            cmRegistration = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENT.EVENT_EVENTREGISTER"]; // bind event.Event_eventregister relattionship
             BindControls();
 
 
 
         }
-        public void BindControls()
+        public void BindControls() // bindcontrols function
         {
-            dgvEvents.DataSource = DM.dsKaioordinate;
+            // set up datasource
+            dgvEvents.DataSource = DM.dsKaioordinate; 
             dgvEvents.DataMember = "EVENT";
 
             dgvRegistration.DataSource = DM.dsKaioordinate;
@@ -44,48 +46,44 @@ namespace Kaioordinate
             dgvWhanau.DataMember = "WHANAU";
         }
 
-        private void btnReturn_Click(object sender, EventArgs e)
+        private void btnReturn_Click(object sender, EventArgs e) // return function
         {
             Close();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e) // add function
         {
-            try
+            try // no constraint in the database relation
             {
-                DataRow newEventRegister = DM.dtEventRegister.NewRow();
-                int whanauID = Convert.ToInt32(dgvWhanau["WhanauID", cmWhanau.Position].Value);
+                DataRow newEventRegister = DM.dtEventRegister.NewRow(); // create new data row
+                //get uds
+                int whanauID = Convert.ToInt32(dgvWhanau["WhanauID", cmWhanau.Position].Value); 
                 int eventID = Convert.ToInt32(dgvEvents["EventID", cmEvent.Position].Value);
                 
-                if (IsDuplicate(whanauID, eventID))
+                if (IsDuplicate(whanauID, eventID)) // check duplicate
                 {
-                    MessageBox.Show("Whanau is already participates in this event.", "Error");
+                    MessageBox.Show("Whanau is already participated in this event, Please choose another whanau", "Error");
 
                 }
-                else
+                else // no duplicate
                 {
                     newEventRegister["WhanauID"] = whanauID;
                     newEventRegister["EventID"] = eventID;
                     newEventRegister["KaiPreparation"] = checkBox.Checked;
 
                     DM.dsKaioordinate.Tables["EVENTREGISTER"].Rows.Add(newEventRegister);
-                    DM.updateEventRegister();
+                    DM.updateEventRegister(); // update event register table
                     MessageBox.Show("Whanau is added.", "Successful");
                 }
             }
             catch (ConstraintException)
             {
-                MessageBox.Show("Whanau is already participates in the event.", "Error");
+                MessageBox.Show("Whanau is already participated in the event.", "Error");
 
             }
 
         }
-
-        private void registerMaintenanceForm_Load(object sender, EventArgs e)
-        {
-
-        }
-        private bool IsDuplicate(int whanauID, int eventID)
+        private bool IsDuplicate(int whanauID, int eventID) // check duplicate function
         {
             foreach (DataRow row in DM.dtEventRegister.Rows)
             {
@@ -102,21 +100,21 @@ namespace Kaioordinate
 
 
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e) //delete function
         {
-            if (cmRegistration.Position < 0)
+            if (cmRegistration.Position < 0) // if the user do not select a registration
             {
                 MessageBox.Show("Please select a registration", "Error");
                 return;
             }
 
-            DataRowView drv = (DataRowView)cmRegistration.Current;
-            DataRow deleteEventRegister = drv.Row;
+            DataRowView drv = (DataRowView)cmRegistration.Current; // get the current registration
+            DataRow deleteEventRegister = drv.Row; // convert to the datarow 
 
             if (MessageBox.Show("Are you sure you want to delete this registration?", "Warning",
                     MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                deleteEventRegister.Delete();
+                deleteEventRegister.Delete(); // delete the data row from the table
                 DM.updateEventRegister();
                 MessageBox.Show("Registration deleted successfully", "Acknowledgement", MessageBoxButtons.OK);
             }

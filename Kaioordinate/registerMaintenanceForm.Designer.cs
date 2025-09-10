@@ -214,7 +214,6 @@
             this.Controls.Add(this.btnAdd);
             this.Name = "registerMaintenanceForm";
             this.Text = "Registration Maintenance";
-            this.Load += new System.EventHandler(this.registerMaintenanceForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWhanau)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).EndInit();
