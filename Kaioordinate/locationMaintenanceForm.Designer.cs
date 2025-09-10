@@ -113,6 +113,7 @@
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(687, 82);
             this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(95, 34);
             this.txtID.TabIndex = 76;
             // 
@@ -121,6 +122,7 @@
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(687, 141);
             this.txtName.Name = "txtName";
+            this.txtName.ReadOnly = true;
             this.txtName.Size = new System.Drawing.Size(260, 34);
             this.txtName.TabIndex = 77;
             // 
@@ -130,6 +132,7 @@
             this.txtAddress.Location = new System.Drawing.Point(687, 214);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
+            this.txtAddress.ReadOnly = true;
             this.txtAddress.Size = new System.Drawing.Size(260, 122);
             this.txtAddress.TabIndex = 78;
             // 
@@ -221,7 +224,7 @@
             this.panel.Controls.Add(this.pTxtAddress);
             this.panel.Controls.Add(this.pTxtLocationName);
             this.panel.Controls.Add(this.pTxtLocationID);
-            this.panel.Location = new System.Drawing.Point(28, 38);
+            this.panel.Location = new System.Drawing.Point(28, 23);
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(999, 355);
             this.panel.TabIndex = 88;
